@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="servicesForm.aspx.cs" Inherits="Diagnostic_medicare_center__management.servicesForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script src="Scripts/validation.js"></script>
     <center>
-    <div id="serviceReg" runat="server" style="display:none; font-weight:bold" ClientIDMode="Static">
+    <div id="serviceReg" runat="server" style=" font-weight:bold" ClientIDMode="Static">
         <h2 style="text-align:center"   class="form-signin-heading" >  Add New Services </h2>
         <asp:Table id="txtRegService" runat="server" >
             <asp:TableRow>
@@ -31,12 +32,14 @@
             <asp:TableRow >
                 
                 <asp:TableCell ColumnSpan="2"> 
-                   <center><asp:Button runat="server" ID="btnServiceSubmit"  CssClass="btn btn-lg btn-primary" Text="Add" ClientIDMode="Static" OnClick="btnServiceSubmit_Click" OnClientClick="return service_validate()"/> </center>
+                    <center><asp:Button runat="server" ID="btnServiceSubmit"  CssClass="btn btn-lg btn-primary" Text="Add" ClientIDMode="Static" OnClick="btnServiceSubmit_Click" OnClientClick="return service_validate()"/> </center>
                 </asp:TableCell>
             </asp:TableRow>         
             </asp:Table>
         
         <asp:Label runat="server" ID="lblerror"></asp:Label>
+                   
+
         
     </div>
 </asp:Content>

@@ -1,28 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DisplayMedicareServices.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayMedicareServices" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditMedicareServices.aspx.cs" Inherits="Diagnostic_medicare_center__management.EditMedicareServices" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label runat="server" ID="headStatusservices" CssClass="titleStatus"></asp:Label>
+     <asp:Label runat="server" ID="headStatusservices" CssClass="titleStatus"></asp:Label>
     <center>
      <asp:GridView runat="server" ID="MserviceDetails"
              AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="MserviceDetails_RowDeleting" OnRowEditing="MserviceDetails_RowEditing" OnRowUpdating="MserviceDetails_RowUpdating">
          <AlternatingRowStyle BackColor="White" />
          <Columns>
                 <asp:TemplateField HeaderText="Medicare Service" >
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtmedicareservice" runat="server" Text='<%# Eval("Medicare_service1") %>'></asp:TextBox>
+                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblmedicareservice" runat="server" Text='<%# Eval("Medicare_service1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+             
               <asp:TemplateField HeaderText="Service Description" >
+                  <EditItemTemplate>
+                        <asp:TextBox ID="txtservicedescription" runat="server" Text='<%# Eval("Service_Description1") %>'></asp:TextBox>
+                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblservicedescription" runat="server" Text='<%# Eval("Service_Description1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
               <asp:TemplateField HeaderText="Amount" >
+                  <EditItemTemplate>
+                        <asp:TextBox ID="txtamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:TextBox>
+                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-              <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" HeaderText="Action"/>
+              <asp:CommandField ButtonType="Link" ShowEditButton="true"  ShowDeleteButton="true" HeaderText="Action"/>
              </Columns>
          
          <EditRowStyle BackColor="#2461BF" />
@@ -39,5 +48,5 @@
        
     <asp:HyperLink ID="addservices" runat="server" Text="AddMedicareServices" style="align-content:center" NavigateUrl="~/servicesForm.aspx"></asp:HyperLink>
          </center>
-    <center> <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label></center>
+     <center> <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label></center>
 </asp:Content>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,15 @@ namespace Diagnostic_medicare_center__management
 
         protected void btnServiceSubmit_Click(object sender, EventArgs e)
         {
+            MedicareServicesSql medicareServicesSql = new MedicareServicesSql();
+            List<MedicareServices> medicareServices = medicareServicesSql.DisplayMedicareServices();
+            MedicareServices mediServices = new MedicareServices
+            {
+                Medicare_service1 = txtMS.Text,
+                Service_Description1= txtMSDescription.Text,
+                Amount1= int.Parse(txtAmount.Text)
+            };
+            medicareServicesSql.AddMedicareServices(mediServices);
 
         }
     }

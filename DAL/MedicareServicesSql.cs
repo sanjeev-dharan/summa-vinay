@@ -21,6 +21,9 @@ namespace DAL
             _sqlCommand.Parameters.AddWithValue("@MedicareService", medicareservices.Medicare_service1);
             _sqlCommand.Parameters.AddWithValue("@ServiceDescription", medicareservices.Service_Description1);
             _sqlCommand.Parameters.AddWithValue("@Amount", medicareservices.Amount1);
+            _sqlConnection.Open();
+            int result = _sqlCommand.ExecuteNonQuery();
+            _sqlConnection.Close();
         }
 
         public List<MedicareServices> DisplayMedicareServices()

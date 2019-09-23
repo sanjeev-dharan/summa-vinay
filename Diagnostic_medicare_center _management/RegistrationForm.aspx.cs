@@ -147,5 +147,19 @@ namespace Diagnostic_medicare_center__management
             agentDetailsSql.RegAgentDetails(agentDetails);
 
         }
+
+        [System.Web.Services.WebMethod]
+        public static string checkUserName(string name)
+        {
+            if (name.Length>3)
+            {
+                return "Available";
+            }
+            else
+            {
+                return "Not Available";
+            }
+        }
+
     }
 }

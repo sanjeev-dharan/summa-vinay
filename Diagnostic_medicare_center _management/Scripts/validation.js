@@ -874,3 +874,58 @@ function agent_validate() {
         return false;
     }
 }
+//--------------------add services------
+function service_validate()
+{
+    //alert("0fyjtf");
+    var medicareservice = document.getElementById("txtMS").value;
+    var mservice = /^[a-zA-Z]*$/;
+    var servicedescription = document.getElementById("txtMSDescription").value;
+    var amount = document.getElementById("txtAmount").value;
+    var num = /^[0-9]*$/;
+    if (medicareservice == "") {
+        alert("Please update the highlighted mandatory medicare service field(s)");
+        document.getElementById("txtMS").style.borderColor = "#FF0000";
+        document.getElementById("txtMS").focus();
+
+        return false;
+    }
+    else if (mservice.length <= 5 || mservice.length >= 50) {
+        alert("medicare service should be in between 5 and 50");
+        document.getElementById("mservice").style.borderColor = "#FF0000";
+        document.getElementById("mservice").focus();
+        return false;
+    }
+    else if (mservice.test(medicareservice) == false) {
+        alert("medicare service  should be an Alphabet");
+        document.getElementById("mservice").style.borderColor = "#FF0000";
+        document.getElementById("mservice").focus();
+        return false;
+    }
+   else if (servicedescription == "") {
+        alert("Please update the highlighted mandatory service description field(s)");
+        document.getElementById("txtMSDescription").style.borderColor = "#FF0000";
+        document.getElementById("txtMSDescription").focus();
+
+        return false;
+    }
+   else if (mservice.test(servicedescription) == false) {
+        alert(" service description  should be an Alphabet");
+        document.getElementById("txtMSDescription").style.borderColor = "#FF0000";
+        document.getElementById("txtMSDescription").focus();
+        return false;
+   }
+   else if (amount == "") {
+       alert("Please update the highlighted mandatory age field(s)");
+       document.getElementById("txtAmount").style.borderColor = "#FF0000";
+       document.getElementById("txtAmount").focus();
+       return false;
+   }
+   else if (num.test(amount) == false) {
+       alert("Please enter a valid amount");
+       document.getElementById("txtAmount").style.borderColor = "#FF0000";
+       document.getElementById("txtAmount").focus();
+       return false;
+   }
+
+}

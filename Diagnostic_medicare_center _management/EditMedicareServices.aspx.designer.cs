@@ -10,7 +10,7 @@
 namespace Diagnostic_medicare_center__management {
     
     
-    public partial class DisplayMedicareServices {
+    public partial class EditMedicareServices {
         
         /// <summary>
         /// headStatusservices control.

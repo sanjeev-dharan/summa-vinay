@@ -1,6 +1,49 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistrationForm.aspx.cs" Inherits="Diagnostic_medicare_center__management.RegistrationForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="Scripts/validation.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        function checkUsername() {
+            var va = document.getElementById('txtAdminUserName').value;
+            
+            if (va.length >= 2)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "RegistrationForm.aspx/checkUserName",
+                    data: '{name: "' +va+'" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: OnSuccess,
+                    failure: function (response) {
+                        alert(response.d);
+                        //var res = response.d.toString();
+                        //document.getElementById('lblerror').innerHTML = res;
+
+                    }
+                });
+            }
+            else {
+                //document.getElementById('lblerror').innerHTML = '';
+            }
+        
+            function OnSuccess(response) {
+                alert(response.d);
+           // var res = response.d.toString();
+            //document.getElementById('lblerror').innerHTML = res;
+            //if (!res.includes('Not')) {
+            //    document.getElementById('lblerror').style.color = 'green';
+            //}
+            //else {
+            //    document.getElementById('lblerror').style.color = 'red';
+            //}
+        }
+        }
+    </script>
+
  <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
@@ -101,7 +144,7 @@
             <asp:Label runat="server" for="txtAdminUserName"> UserName</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAdminUserName" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAdminUserName" ClientIDMode="Static" onkeyup="checkUsername()"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>

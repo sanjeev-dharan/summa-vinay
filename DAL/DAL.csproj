@@ -50,9 +50,11 @@
     <Compile Include="IDoctorDetails.cs" />
     <Compile Include="IMedicareServices.cs" />
     <Compile Include="IPatientDetails.cs" />
+    <Compile Include="ITestResults.cs" />
     <Compile Include="MedicareServicesSql.cs" />
     <Compile Include="PatientDetailsSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testresultsql.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
