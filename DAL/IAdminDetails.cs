@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,5 +14,7 @@ namespace DAL
         List<AdminDetails> DisplayAdminDetails();
         void ModifyAdminDetails(AdminDetails adminDetails);
         AdminDetails GetAdmin(int AdminId);
+        DataTable GetPendingApprovalData();
+        bool approveUsers(int id, string tableName, string type);
     }
 }

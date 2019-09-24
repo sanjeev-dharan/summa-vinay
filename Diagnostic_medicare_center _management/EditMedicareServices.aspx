@@ -48,5 +48,8 @@
        
     <asp:HyperLink ID="addservices" runat="server" Text="AddMedicareServices" style="align-content:center" NavigateUrl="~/servicesForm.aspx"></asp:HyperLink>
          </center>
-     <center> <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label></center>
+     <center> 
+         <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label>
+
+     </center>
 </asp:Content>

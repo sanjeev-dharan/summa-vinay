@@ -161,5 +161,9 @@ namespace Diagnostic_medicare_center__management
             }
         }
 
+        protected void btnAdminback_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

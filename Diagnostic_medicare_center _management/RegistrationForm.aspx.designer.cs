@@ -148,6 +148,15 @@ namespace Diagnostic_medicare_center__management {
         protected global::System.Web.UI.WebControls.Button btnAdminSubmit;
         
         /// <summary>
+        /// btnAdminback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdminback;
+        
+        /// <summary>
         /// lblerror control.
         /// </summary>
         /// <remarks>
@@ -364,6 +373,15 @@ namespace Diagnostic_medicare_center__management {
         protected global::System.Web.UI.WebControls.Button btnDoctorSubmit;
         
         /// <summary>
+        /// btnDoctorback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDoctorback;
+        
+        /// <summary>
         /// PatientReg control.
         /// </summary>
         /// <remarks>
@@ -517,13 +535,22 @@ namespace Diagnostic_medicare_center__management {
         protected global::System.Web.UI.WebControls.TextBox txtPatientzip;
         
         /// <summary>
-        /// Button1 control.
+        /// btnpatientsubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnpatientsubmit;
+        
+        /// <summary>
+        /// btnpatientback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnpatientback;
         
         /// <summary>
         /// AgentReg control.
@@ -686,5 +713,14 @@ namespace Diagnostic_medicare_center__management {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgentsubmit;
+        
+        /// <summary>
+        /// btnagentback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnagentback;
     }
 }

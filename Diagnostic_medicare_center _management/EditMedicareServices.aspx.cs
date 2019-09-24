@@ -79,7 +79,7 @@ namespace Diagnostic_medicare_center__management
          
             MserviceDetails.EditIndex = e.NewEditIndex;
             
-            LoadData();
+            //LoadData();
         }
 
         protected void MserviceDetails_RowUpdating(object sender, GridViewUpdateEventArgs e)

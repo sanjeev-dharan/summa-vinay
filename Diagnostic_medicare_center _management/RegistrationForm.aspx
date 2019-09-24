@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistrationForm.aspx.cs" Inherits="Diagnostic_medicare_center__management.RegistrationForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Scripts/validation.js"></script>
+    <%--<script src="Scripts/validation.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript">
+    <script src="Scripts/jquery-1.10.2.js"></script>--%>
+    <%--<script type="text/javascript">
         function checkUsername() {
             var va = document.getElementById('txtAdminUserName').value;
             
@@ -42,7 +42,7 @@
             //}
         }
         }
-    </script>
+    </script>--%>
 
  <div class="container">
         <div class="row">
@@ -157,13 +157,16 @@
             </asp:TableRow>
             <asp:TableRow >
                 
-                <asp:TableCell ColumnSpan="2"> 
+                <asp:TableCell > 
                    <center><asp:Button runat="server" ID="btnAdminSubmit"  CssClass="btn btn-lg btn-primary" Text="Submit" ClientIDMode="Static" OnClick="btnAdminSubmit_Click"  OnClientClick="return admin_validate()"  /> </center>
+                </asp:TableCell>
+                 <asp:TableCell > 
+                           <center><asp:Button runat="server" ID="btnAdminback"  CssClass="btn btn-lg btn-primary" Text="Back" ClientIDMode="Static" OnClick="btnAdminback_Click"   /> </center>
                 </asp:TableCell>
             </asp:TableRow>
             </asp:Table>
         <asp:Label runat="server" ID="lblerror"></asp:Label>
-        
+
     </div>
         <%--Doctor Registration form--%>
      <div id="DoctorReg" runat="server" style="display:none; font-weight:bold" CssClass="doc_reg" ClientIDMode="Static">
@@ -335,8 +338,11 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2">
+                <asp:TableCell>
                    <center> <asp:Button runat="server" ID="btnDoctorSubmit" Text="Submit" CssClass="btn btn-lg btn-primary" ClientIDMode="Static"  OnClick="btnDoctorSubmit_Click" OnClientClick="return doctor_validate()"/> </center>
+                </asp:TableCell>
+                <asp:TableCell > 
+                           <center><asp:Button runat="server" ID="btnDoctorback"  CssClass="btn btn-lg btn-primary" Text="Back" ClientIDMode="Static" OnClick="btnAdminback_Click"   /> </center>
                 </asp:TableCell>
             </asp:TableRow>
             </asp:Table>
@@ -474,8 +480,11 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2">
-                 <center><asp:Button runat="server" ID="Button1" Text="Submit" CssClass="btn btn-lg btn-primary" OnClick="Button1_Click" ClientIDMode="Static" OnClientClick="return patient_validate()"/></center>   
+                <asp:TableCell>
+                 <center><asp:Button runat="server" ID="btnpatientsubmit" Text="Submit" CssClass="btn btn-lg btn-primary" OnClick="Button1_Click" ClientIDMode="Static" OnClientClick="return patient_validate()"/></center>   
+                </asp:TableCell>
+                <asp:TableCell > 
+                           <center><asp:Button runat="server" ID="btnpatientback"  CssClass="btn btn-lg btn-primary" Text="Back" ClientIDMode="Static" OnClick="btnAdminback_Click"   /> </center>
                 </asp:TableCell>
             </asp:TableRow>
             </asp:Table>
@@ -614,8 +623,11 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell ColumnSpan="2" >
+                <asp:TableCell >
                   <center><asp:Button runat="server" ID="btnAgentsubmit" Text="Submit" CssClass="btn btn-lg btn-primary" ClientIDMode="Static" OnClick="btnAgentsubmit_Click" OnClientClick="return agent_validate()"/>  </center>
+                </asp:TableCell>
+                <asp:TableCell > 
+                           <center><asp:Button runat="server" ID="btnagentback"  CssClass="btn btn-lg btn-primary" Text="Back" ClientIDMode="Static" OnClick="btnAdminback_Click"   /> </center>
                 </asp:TableCell>
             </asp:TableRow>
             </asp:Table>

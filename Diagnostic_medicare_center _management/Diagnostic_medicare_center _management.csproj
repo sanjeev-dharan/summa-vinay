@@ -200,6 +200,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Agent.aspx" />
+    <Content Include="ApproveUsers.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -228,6 +229,10 @@
     <Content Include="images\06.jpg" />
     <Content Include="images\backgroundimage.png" />
     <Content Include="images\bg.jfif" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\ok.png" />
+    <Content Include="images\usericon.png" />
     <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\logo.jpg" />
@@ -404,6 +409,13 @@
     </Compile>
     <Compile Include="Agent.aspx.designer.cs">
       <DependentUpon>Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveUsers.aspx.cs">
+      <DependentUpon>ApproveUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveUsers.aspx.designer.cs">
+      <DependentUpon>ApproveUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
