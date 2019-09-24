@@ -209,6 +209,7 @@
     <Content Include="DisplayDoctordetails_R.aspx" />
     <Content Include="DisplayMedicareServices.aspx" />
     <Content Include="Displaypatientdetails.aspx" />
+    <Content Include="DisplayTestResults.aspx" />
     <Content Include="Doctor.aspx" />
     <Content Include="EditMedicareServices.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -269,6 +270,7 @@
     <Content Include="Global.asax" />
     <Content Include="servicesForm.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="testdetails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -463,6 +465,13 @@
     <Compile Include="Displaypatientdetails.aspx.designer.cs">
       <DependentUpon>Displaypatientdetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DisplayTestResults.aspx.cs">
+      <DependentUpon>DisplayTestResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayTestResults.aspx.designer.cs">
+      <DependentUpon>DisplayTestResults.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.aspx.cs">
       <DependentUpon>Doctor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -518,6 +527,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="testdetails.aspx.cs">
+      <DependentUpon>testdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testdetails.aspx.designer.cs">
+      <DependentUpon>testdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

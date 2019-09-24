@@ -13,6 +13,6 @@ namespace DAL
         void AddTestResults(TestResultdetails testresultdetails);
         List<TestResultdetails> DisplayTestResults();
         void ModifyTestResults(TestResultdetails testresultdetails);
-        void RemoveTestResults(string name);
+      
     }
 }
