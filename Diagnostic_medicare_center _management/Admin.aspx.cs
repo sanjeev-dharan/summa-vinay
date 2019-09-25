@@ -11,7 +11,7 @@ namespace Diagnostic_medicare_center__management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/ApproveUsers.aspx");
         }
     }
 }

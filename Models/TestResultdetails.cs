@@ -8,6 +8,11 @@ namespace Models
 {
   public  class TestResultdetails
     {
+        int reportId;
+        int PatientId;
+        int doctorid;
+        int medicareService;
+        int agentId;
          string  servicedate;
          string testresultdate;
         string diag1_normal_value;
@@ -232,11 +237,80 @@ namespace Models
                 otherinfo = value;
             }
         }
+
+        //public int ReportId
+        //{
+        //    get
+        //    {
+        //        return reportId;
+        //    }
+
+        //    set
+        //    {
+        //        reportId = value;
+        //    }
+        //}
+
+        public int PatientId1
+        {
+            get
+            {
+                return PatientId;
+            }
+
+            set
+            {
+                PatientId = value;
+            }
+        }
+
+        public int Doctorid
+        {
+            get
+            {
+                return doctorid;
+            }
+
+            set
+            {
+                doctorid = value;
+            }
+        }
+
+        public int MedicareService
+        {
+            get
+            {
+                return medicareService;
+            }
+
+            set
+            {
+                medicareService = value;
+            }
+        }
+
+        public int AgentId
+        {
+            get
+            {
+                return agentId;
+            }
+
+            set
+            {
+                agentId = value;
+            }
+        }
+
         public TestResultdetails()
         {
                 
         }
-        public TestResultdetails(string servicedate, string testresultdate,string diag1_normal_value,string diag1_actual_value, string diag2_normal_value, string diag2_actual_value,string diag3_normal_value,string diag3_actual_value, string diag4_normal_value,
+        public TestResultdetails(int PatientId,
+        int doctorid,
+        int medicareService,
+        int agentId, string servicedate, string testresultdate,string diag1_normal_value,string diag1_actual_value, string diag2_normal_value, string diag2_actual_value,string diag3_normal_value,string diag3_actual_value, string diag4_normal_value,
         string diag4_actual_value,
         string diag5_normal_value,
         string diag5_actual_value,
@@ -245,6 +319,11 @@ namespace Models
         string doctor_comments,
         string otherinfo)
         {
+           
+            this.PatientId = PatientId;
+            this.doctorid = Doctorid;
+            this.medicareService = medicareService;
+            this.agentId = agentId;
             this.servicedate = servicedate;
             this.testresultdate = testresultdate;
             this.Diag1_normal_value = diag1_normal_value;

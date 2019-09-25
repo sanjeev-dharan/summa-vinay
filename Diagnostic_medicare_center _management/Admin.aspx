@@ -4,13 +4,8 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6" >
-        <asp:DropDownList CssClass="form-control" runat="server" ID="Roleselect" ClientIDMode="Static" style="margin-top:2%" onchange="select_Role()" >
-            <asp:ListItem value="" Text="--Select--"></asp:ListItem>
-            <asp:ListItem Value="1" Text="Doctor"></asp:ListItem>
-            <asp:ListItem Value="2" Text="Patient"></asp:ListItem>
-            <asp:ListItem Value="3" Text="Agent"></asp:ListItem>
-            <asp:ListItem Value="4" Text="Medicare Services"></asp:ListItem>
-        </asp:DropDownList><br/>
+      
+    
        
             </div>
             <div class="col-lg-3"></div>

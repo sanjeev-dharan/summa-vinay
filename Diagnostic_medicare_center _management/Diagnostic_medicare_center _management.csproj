@@ -210,7 +210,8 @@
     <Content Include="DisplayDoctordetails_R.aspx" />
     <Content Include="DisplayMedicareServices.aspx" />
     <Content Include="Displaypatientdetails.aspx" />
-    <Content Include="DisplayTestResults.aspx" />
+    <Content Include="medicareservicesform.aspx" />
+    <Content Include="TestResultsdisplay.aspx" />
     <Content Include="Doctor.aspx" />
     <Content Include="EditMedicareServices.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -273,6 +274,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Selecttest.aspx" />
     <Content Include="servicesForm.aspx" />
     <Content Include="Site.Master" />
     <Content Include="testdetails.aspx" />
@@ -477,12 +479,19 @@
     <Compile Include="Displaypatientdetails.aspx.designer.cs">
       <DependentUpon>Displaypatientdetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DisplayTestResults.aspx.cs">
-      <DependentUpon>DisplayTestResults.aspx</DependentUpon>
+    <Compile Include="medicareservicesform.aspx.cs">
+      <DependentUpon>medicareservicesform.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DisplayTestResults.aspx.designer.cs">
-      <DependentUpon>DisplayTestResults.aspx</DependentUpon>
+    <Compile Include="medicareservicesform.aspx.designer.cs">
+      <DependentUpon>medicareservicesform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestResultsdisplay.aspx.cs">
+      <DependentUpon>TestResultsdisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestResultsdisplay.aspx.designer.cs">
+      <DependentUpon>TestResultsdisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor.aspx.cs">
       <DependentUpon>Doctor.aspx</DependentUpon>
@@ -516,6 +525,13 @@
     </Compile>
     <Compile Include="RegistrationForm.aspx.designer.cs">
       <DependentUpon>RegistrationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Selecttest.aspx.cs">
+      <DependentUpon>Selecttest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Selecttest.aspx.designer.cs">
+      <DependentUpon>Selecttest.aspx</DependentUpon>
     </Compile>
     <Compile Include="servicesForm.aspx.cs">
       <DependentUpon>servicesForm.aspx</DependentUpon>

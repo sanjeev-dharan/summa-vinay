@@ -8,7 +8,7 @@
          <Columns>
                 <asp:TemplateField HeaderText="Medicare Service" >
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtmedicareservice" runat="server" Text='<%# Eval("Medicare_service1") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtmedicareservice" runat="server" CssClass="form-control" Text='<%# Eval("Medicare_service1") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblmedicareservice" runat="server" Text='<%# Eval("Medicare_service1") %>'></asp:Label>
@@ -17,7 +17,7 @@
              
               <asp:TemplateField HeaderText="Service Description" >
                   <EditItemTemplate>
-                        <asp:TextBox ID="txtservicedescription" runat="server" Text='<%# Eval("Service_Description1") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtservicedescription" runat="server" CssClass="form-control" Text='<%# Eval("Service_Description1") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblservicedescription" runat="server" Text='<%# Eval("Service_Description1") %>'></asp:Label>
@@ -25,7 +25,7 @@
                 </asp:TemplateField>
               <asp:TemplateField HeaderText="Amount" >
                   <EditItemTemplate>
-                        <asp:TextBox ID="txtamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtamount" runat="server" CssClass="form-control" Text='<%# Eval("Amount1") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:Label>

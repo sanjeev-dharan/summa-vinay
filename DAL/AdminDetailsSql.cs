@@ -69,10 +69,11 @@ namespace DAL
                          _dataRow["EmailId"].ToString(),
                          _dataRow["UserName"].ToString(),
                          _dataRow["Password"].ToString()
-                        //_dataRow["Isapproved"].ToString() == "Yes" ? true : false,
-                        //DateTime.Parse(_dataRow["Isapproved_On"].ToString())
+                    )
 
-                        ));
+
+
+                        );
                 }
                 return adminDetails;
             }
@@ -113,10 +114,9 @@ namespace DAL
                          _dataRow["EmailId"].ToString(),
                          _dataRow["UserName"].ToString(),
                          _dataRow["Password"].ToString()
-                        //_dataRow["Isapproved"].ToString() == "Yes" ? true : false,
-                        //DateTime.Parse(_dataRow["Isapproved_On"].ToString())
+                      )
 
-                        );
+                        ;
                 return adminDetails;
             }
                
@@ -162,9 +162,8 @@ namespace DAL
             _sqlCommand.Parameters.AddWithValue("@Emailid", adminDetails.EmailId1);
             _sqlCommand.Parameters.AddWithValue("@UserName", adminDetails.UserName1);
             _sqlCommand.Parameters.AddWithValue("@Password", adminDetails.Password1);
-            //_sqlCommand.Parameters.AddWithValue("@Isapproved", adminDetails.Isapproved1);
-            //_sqlCommand.Parameters.AddWithValue("@IsApprovedOn", adminDetails.Isapproved_On1);
-            //,Isapproved = @Isapproved,Isapproved_On = @IsApprovedOn
+         
+
             _sqlConnection.Open();
             _sqlCommand.ExecuteNonQuery();
             _sqlConnection.Close();
@@ -187,10 +186,9 @@ namespace DAL
             _sqlCommand.Parameters.AddWithValue("@Emailid", adminDetails.EmailId1);
             _sqlCommand.Parameters.AddWithValue("@UserName", adminDetails.UserName1);
             _sqlCommand.Parameters.AddWithValue("@Password", adminDetails.Password1);
-            //_sqlCommand.Parameters.AddWithValue("@Isapproved", adminDetails.Isapproved1);
-            //_sqlCommand.Parameters.AddWithValue("@IsApprovedOn", adminDetails.Isapproved_On1);
-        
-           int result= _sqlCommand.ExecuteNonQuery();
+           
+
+            int result= _sqlCommand.ExecuteNonQuery();
             _sqlConnection.Close();
         }
     }

@@ -146,14 +146,7 @@
         document.getElementById("txtDoctorUserName").focus();
         return false;
     }
-    else if (username.length < 8 || username.length > 15) {
-        alert("Give strong password");
-        document.getElementById("txtDoctorUserName").style.borderColor = "#FF0000";
-        document.getElementById("txtDoctorUserName").focus();
-
-
-        return false;
-    }
+   
     else if (uname.test(username) == false) {
         alert("UserName should be an Alphabet");
         document.getElementById("txtDoctorUserName").style.borderColor = "#FF0000";
@@ -929,3 +922,5 @@ function service_validate()
    }
 
 }
+//--------------------testResult_Validation-------------------------
+var medicareservice = document.getElementById("txtMS").value;

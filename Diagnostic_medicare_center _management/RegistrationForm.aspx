@@ -75,7 +75,7 @@
                    <asp:Label runat="server" for="txtAdminFname">First Name</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAdminFname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAdminFname" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -83,7 +83,7 @@
             <asp:Label runat="server" for="txtAdminLname">Last Name</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAdminLname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAdminLname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -91,7 +91,7 @@
             <asp:Label runat="server" for="txtAge">Age</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAge" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAge" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -99,7 +99,7 @@
             <asp:Label runat="server" for="ddlAdminGender">Gender</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                   <asp:DropDownList  runat="server" ID="ddlAdminGender" ClientIDMode="Static"  >
+                   <asp:DropDownList  runat="server" ID="ddlAdminGender" ClientIDMode="Static"  CssClass="form-control" >
                        <asp:ListItem value="" Text="--select--"></asp:ListItem>
                        <asp:ListItem value="Male" Text="Male"></asp:ListItem>
                         <asp:ListItem value="Female" Text="Female"></asp:ListItem>
@@ -112,7 +112,7 @@
             <asp:Label runat="server" for="txtdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtdob" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -120,7 +120,7 @@
             <asp:Label runat="server" for="txtcntct">Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -128,7 +128,7 @@
             <asp:Label runat="server" for="txtAltcntct"> Alternate Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAltcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAltcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -136,7 +136,7 @@
             <asp:Label runat="server" for="txtEmail"> Email Id</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtEmail" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtEmail" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -144,7 +144,7 @@
             <asp:Label runat="server" for="txtAdminUserName"> UserName</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAdminUserName" ClientIDMode="Static" onkeyup="checkUsername()"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAdminUserName" ClientIDMode="Static" onkeyup="checkUsername()" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -152,7 +152,7 @@
             <asp:Label runat="server" for="txtPasswd" > Password</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPasswd" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswd" TextMode="Password" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow >
@@ -177,7 +177,7 @@
                    <asp:Label runat="server" for="txtDoctorFname" >First Name</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorFname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorFname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -185,7 +185,7 @@
             <asp:Label runat="server" for="txtDoctorLname">Last Name</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorLname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorLname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -193,7 +193,7 @@
             <asp:Label runat="server" for="txtDoctorAge">Age</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorAge" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorAge" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -201,7 +201,7 @@
             <asp:Label runat="server" for="ddlDoctorGender">Gender</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                   <asp:DropDownList  runat="server" ID="ddlDoctorGender" ClientIDMode="Static"  >
+                   <asp:DropDownList  runat="server" ID="ddlDoctorGender" ClientIDMode="Static"  CssClass="form-control" >
             <asp:ListItem value="" Text="--select--"></asp:ListItem>
             <asp:ListItem value="Male" Text="Male"></asp:ListItem>
             <asp:ListItem value="Female" Text="Female"></asp:ListItem>
@@ -214,7 +214,7 @@
             <asp:Label runat="server" for="txtDoctordob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctordob" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctordob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -222,7 +222,7 @@
             <asp:Label runat="server" for="txtDoctorcntct">Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -230,7 +230,7 @@
             <asp:Label runat="server" for="txtDoctorAltcntct"> Alternate Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorAltcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorAltcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -238,7 +238,7 @@
             <asp:Label runat="server" for="txtDoctorEmail"> Email Id</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorEmail" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorEmail" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -246,7 +246,7 @@
             <asp:Label runat="server" for="txtDoctorUserName"> UserName</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorUserName" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorUserName" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -254,7 +254,7 @@
             <asp:Label runat="server" for="txtDoctorPasswd" > Password</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorPasswd" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorPasswd" TextMode="Password" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -262,7 +262,7 @@
             <asp:Label runat="server" for="txtDoctorAddress"> Address Line 1</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -270,7 +270,7 @@
             <asp:Label runat="server" for="txtDoctoraltAddress"> Address Line 2</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctoraltAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctoraltAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -278,7 +278,7 @@
                    <asp:Label runat="server" for="txtDoctorcity">City</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorcity" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorcity" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -286,7 +286,7 @@
                    <asp:Label runat="server" for="txtDoctorstate">State</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorstate" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorstate" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
                <asp:TableRow>
@@ -294,7 +294,7 @@
                    <asp:Label runat="server" for="txtDoctorZipcode">Zip Code</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorZipcode" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorZipcode" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -302,7 +302,7 @@
                    <asp:Label runat="server" for="txtDoctorDegree"> Degree</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorDegree" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorDegree" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -310,7 +310,7 @@
                    <asp:Label runat="server" for="txtDoctorSpeciality"> Speciality</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorSpeciality" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorSpeciality" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -318,7 +318,7 @@
                    <asp:Label runat="server" for="txtDoctorWorkhours"> Workhours</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorWorkhours" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorWorkhours" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -326,7 +326,7 @@
                    <asp:Label runat="server" for="txtDoctorHspName"> Hospital Name</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorHspName" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorHspName" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -334,7 +334,7 @@
                    <asp:Label runat="server" for="txtDoctorMediServID">  Medicare Service ID</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctorMediServID" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctorMediServID" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -359,7 +359,7 @@
                    <asp:Label runat="server" for="txtPatientFname">First Name</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientFname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientFname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -367,7 +367,7 @@
             <asp:Label runat="server" for="txtPatientLname">Last Name</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientLname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientLname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -375,7 +375,7 @@
             <asp:Label runat="server" for="txtPatientAge">Age</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientAge" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientAge" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -383,7 +383,7 @@
             <asp:Label runat="server" for="ddlPatientGender">Gender</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                   <asp:DropDownList  runat="server" ID="ddlPatientGender" ClientIDMode="Static"  >
+                   <asp:DropDownList  runat="server" ID="ddlPatientGender" ClientIDMode="Static" CssClass="form-control"  >
             <asp:ListItem value="" Text="--select--"></asp:ListItem>
             <asp:ListItem value="Male" Text="Male"></asp:ListItem>
             <asp:ListItem value="Female" Text="Female"></asp:ListItem>
@@ -396,7 +396,7 @@
             <asp:Label runat="server" for="txtPatientdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientdob" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -404,7 +404,7 @@
             <asp:Label runat="server" for="txtPatientcntct">Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -412,7 +412,7 @@
             <asp:Label runat="server" for="txtPatientAltcntct"> Alternate Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientAltcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientAltcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -420,7 +420,7 @@
             <asp:Label runat="server" for="txtPatientEmail"> Email Id</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientEmail" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientEmail" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -428,7 +428,7 @@
             <asp:Label runat="server" for="txtPatientUserName"> UserName</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientUserName" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientUserName" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -436,7 +436,7 @@
             <asp:Label runat="server" for="txtPatientPasswd" > Password</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientPasswd" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientPasswd" TextMode="Password" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -444,7 +444,7 @@
             <asp:Label runat="server" for="txtPatientAddress"> Address Line 1</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -452,7 +452,7 @@
             <asp:Label runat="server" for="txtPatientAltAddress"> Address Line 2</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientAltAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientAltAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -460,7 +460,7 @@
                    <asp:Label runat="server" for="txtPatientcity">City</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientcity" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientcity" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -468,7 +468,7 @@
                    <asp:Label runat="server" for="txtPatientstate">State</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientstate" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientstate" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
                  </asp:TableRow>
                   <asp:TableRow>
@@ -476,7 +476,7 @@
                    <asp:Label runat="server" for="txtPatientzip">Zip Code</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientzip" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientzip" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -502,7 +502,7 @@
                    <asp:Label runat="server" for="txtAgentFname">First Name</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentFname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentFname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -510,7 +510,7 @@
             <asp:Label runat="server" for="txtAgentLname">Last Name</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentLname" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentLname" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -518,7 +518,7 @@
             <asp:Label runat="server" for="txtAgentAge">Age</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentAge" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentAge" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -526,7 +526,7 @@
             <asp:Label runat="server" for="ddlAgentGender">Gender</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                   <asp:DropDownList  runat="server" ID="ddlAgentGender" ClientIDMode="Static"  >
+                   <asp:DropDownList  runat="server" ID="ddlAgentGender" ClientIDMode="Static"  CssClass="form-control" >
             <asp:ListItem value="" Text="--select--"></asp:ListItem>
             <asp:ListItem value="Male" Text="Male"></asp:ListItem>
             <asp:ListItem value="Female" Text="Female"></asp:ListItem>
@@ -539,7 +539,7 @@
             <asp:Label runat="server" for="txtAgentdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentdob" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -547,7 +547,7 @@
             <asp:Label runat="server" for="txtAgentcntct">Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -555,7 +555,7 @@
             <asp:Label runat="server" for="txtAgentAltcntct"> Alternate Contact Number</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentAltcntct" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentAltcntct" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -563,7 +563,7 @@
             <asp:Label runat="server" for="txtAgentEmail"> Email Id</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentEmail" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentEmail" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -571,7 +571,7 @@
             <asp:Label runat="server" for="txtAgentUserName"> UserName</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentUserName" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentUserName" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
@@ -579,7 +579,7 @@
             <asp:Label runat="server" for="txtAgentPasswd" > Password</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentPasswd" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentPasswd" TextMode="Password" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -587,7 +587,7 @@
             <asp:Label runat="server" for="txtAgentAddress"> Address Line 1</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -595,7 +595,7 @@
             <asp:Label runat="server" for="txtAgentAltAddress"> Address Line 2</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentAltAddress" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentAltAddress" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -603,7 +603,7 @@
                    <asp:Label runat="server" for="txtAgentcity">City</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentcity" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentcity" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -611,7 +611,7 @@
                    <asp:Label runat="server" for="txtAgentstate">State</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentstate" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentstate" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
                  </asp:TableRow>
                   <asp:TableRow>
@@ -619,7 +619,7 @@
                    <asp:Label runat="server" for="txtAgentzip">Zip Code</asp:Label>        
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentzip" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentzip" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>

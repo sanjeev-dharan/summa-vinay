@@ -13,11 +13,17 @@ namespace DAL
     {
         public void AddTestResults(TestResultdetails testresultdetails)
         {
+            
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
             SqlCommand _sqlCommand = new SqlCommand();
             _sqlCommand.CommandType = CommandType.Text;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "insert into MedicalTestHistory(servicedate,testresultdate,diag1_normal_value,diag1_actual_value,diag2_normal_value,diag2_actual_value,diag3_normal_value,diag3_actual_value,diag4_normal_value,diag4_actual_value,diag5_normal_value,diag5_actual_value,diag6_normal_value,diag6_actual_value,doctor_comments,otherinfo) values (@servicedate,@testresultdate,@diag1_normal_value,@diag1_actual_value,@diag2_normal_value,@diag2_actual_value,@diag3_normal_value,@diag3_actual_value,@diag4_normal_value,@diag4_actual_value,@diag5_normal_value,@diag5_actual_value,@diag6_normal_value,@diag6_actual_value,@doctor_comments,@otherinfo)";
+            _sqlCommand.CommandText = "insert into MedicalTestHistory(PatientId,doctorid,medicareService,agentId,servicedate,testresultdate,diag1_normal_value,diag1_actual_value,diag2_normal_value,diag2_actual_value,diag3_normal_value,diag3_actual_value,diag4_normal_value,diag4_actual_value,diag5_normal_value,diag5_actual_value,diag6_normal_value,diag6_actual_value,doctor_comments,otherinfo) values (@PatientId,@doctorid,@medicareService,@agentId,@servicedate,@testresultdate,@diag1_normal_value,@diag1_actual_value,@diag2_normal_value,@diag2_actual_value,@diag3_normal_value,@diag3_actual_value,@diag4_normal_value,@diag4_actual_value,@diag5_normal_value,@diag5_actual_value,@diag6_normal_value,@diag6_actual_value,@doctor_comments,@otherinfo)";
+            //_sqlCommand.Parameters.AddWithValue("@reportId", testresultdetails.ReportId);
+            _sqlCommand.Parameters.AddWithValue("@PatientId", testresultdetails.PatientId1);
+            _sqlCommand.Parameters.AddWithValue("@doctorid", testresultdetails.Doctorid);
+            _sqlCommand.Parameters.AddWithValue("@medicareService", testresultdetails.MedicareService);
+            _sqlCommand.Parameters.AddWithValue("@agentId", testresultdetails.AgentId);
             _sqlCommand.Parameters.AddWithValue("@servicedate", testresultdetails.Servicedate);
             _sqlCommand.Parameters.AddWithValue("@testresultdate", testresultdetails.Testresultdate);
             _sqlCommand.Parameters.AddWithValue("@diag1_normal_value", testresultdetails.Diag1_normal_value);
@@ -55,7 +61,11 @@ namespace DAL
                 foreach (DataRow _dataRow in _dataTable.Rows)
                 {
                     testresults.Add(new TestResultdetails(
-                        
+                     
+                       int.Parse(_dataRow["PatientId"].ToString()),
+                       int.Parse(_dataRow["doctorid"].ToString()),
+                       int.Parse(_dataRow["medicareService"].ToString()),
+                       int.Parse(_dataRow["agentId"].ToString()),
                         _dataRow["servicedate"].ToString(),
                         _dataRow["testresultdate"].ToString(),
                         _dataRow["diag1_normal_value"].ToString(),
@@ -71,7 +81,7 @@ namespace DAL
                         _dataRow["diag6_normal_value"].ToString(),
                         _dataRow["diag6_actual_value"].ToString(),
                          _dataRow["doctor_comments"].ToString(),
-                        _dataRow["otherinfo"].ToString()
+                        _dataRow["Otherinfo"].ToString()
 
                         )
 

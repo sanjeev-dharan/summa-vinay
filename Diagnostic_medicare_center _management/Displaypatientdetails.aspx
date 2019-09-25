@@ -39,7 +39,7 @@
                         <asp:Label ID="lblpatientcntct" runat="server" Text='<%# Eval("ContactNumber1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField> 
-                 <asp:TemplateField HeaderText="AltContactNumber">
+                 <asp:TemplateField HeaderText="AltContactNumber" Visible="false">
                     <ItemTemplate>
                         <asp:Label ID="lblpatientaltcntct" runat="server" Text='<%# Eval("AltContactNumber1") %>'></asp:Label>
                     </ItemTemplate>
@@ -64,7 +64,7 @@
                         <asp:Label ID="lblpatientaddressline1" runat="server" Text='<%# Eval("AddressLine11") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField> 
-                 <asp:TemplateField HeaderText="AddressLine2">
+                 <asp:TemplateField HeaderText="AddressLine2" Visible="false">
                     <ItemTemplate>
                         <asp:Label ID="lblpatientaddressline2" runat="server" Text='<%# Eval("AddressLine21") %>'></asp:Label>
                     </ItemTemplate>

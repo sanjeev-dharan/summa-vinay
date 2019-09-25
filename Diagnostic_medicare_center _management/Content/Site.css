@@ -93,6 +93,14 @@ article {
  overflow-y:scroll;
  height:540px;
 }
+#details,#PatientReg,#AgentReg
+{
+    overflow-y:scroll;
+ height:540px;
+ padding-top:3%;
+ align-content:center;
+
+}
 .messageColor
 {
     color:red;
@@ -117,3 +125,35 @@ article {
     grid-row-align:start;
     padding-left:30%;
 }
+.testresult1{
+  height: 100% !important;
+    width: 100% !important;
+    background-image: url('../images/03.jpg');
+    background-size:180%;
+    background-repeat: no-repeat;
+  
+    
+}
+.wrap {
+            width: 100%;
+            margin-left: 180px;
+            height: auto;
+        }
+        
+         .content-box {
+            padding: 100px;
+            margin-right: 400px;
+            border: thin solid #000000;
+            margin-top: 79px;
+            border-radius: 50px;
+            color: #ffffff;
+            margin-bottom: 50px;
+        }
+            .content-box:hover { 
+                border-color: #ff0000;
+                box-shadow: 0px 0px 10px #6EA2DE;
+                
+            }
+
+
+

@@ -26,6 +26,36 @@ namespace DAL
             _sqlConnection.Close();
         }
 
+        public bool approveUsers(int id, string tableName, string type)
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "ApproveUsers";
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            sqlCommand.Parameters.AddWithValue("@table", tableName);
+            sqlCommand.Parameters.AddWithValue("@type", type);
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                if (!dt.Rows[0][0].ToString().Contains("Fail"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<MedicareServices> DisplayMedicareServices()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
@@ -63,16 +93,36 @@ namespace DAL
             }
         }
 
+        public DataTable GetPendingApprovalData()
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "GetPendingUsers";
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+                return dt;
+            else
+                return new DataTable();
+        }
+
         public void ModifyMedicareServices(MedicareServices medicareservices)
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
+            _sqlConnection.Open();
             SqlCommand _sqlCommand = new SqlCommand();
             _sqlCommand.CommandType = CommandType.Text;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "update  Medicare_services set Service_Description=@servicedescription,Amount=@amount where Medicare_service=@medicareservice";
-            //    _sqlCommand.Parameters.AddWithValue("@MedicareService", medicareservices.Medicare_service1);
+            _sqlCommand.CommandText = "update  Medicare_services set Medicare_service=@medicareservice,Service_Description=@servicedescription,Amount=@amount where MedicareServicesId=@medicareservicesid  ";
+            _sqlCommand.Parameters.AddWithValue("@medicareservicesid", medicareservices.MedicareServicesId1);
+            _sqlCommand.Parameters.AddWithValue("@MedicareService", medicareservices.Medicare_service1);
             _sqlCommand.Parameters.AddWithValue("@ServiceDescription", medicareservices.Service_Description1);
             _sqlCommand.Parameters.AddWithValue("@Amount", medicareservices.Amount1);
+            int res = _sqlCommand.ExecuteNonQuery();
+            _sqlConnection.Close();
         }
 
         public void RemoveMedicareServices(string name)

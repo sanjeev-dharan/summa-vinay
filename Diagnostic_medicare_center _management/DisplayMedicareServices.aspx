@@ -7,6 +7,11 @@
              AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="MserviceDetails_RowDeleting" OnRowEditing="MserviceDetails_RowEditing" OnRowUpdating="MserviceDetails_RowUpdating">
          <AlternatingRowStyle BackColor="White" />
          <Columns>
+             <asp:TemplateField HeaderText="ID" visible="false" >
+                    <ItemTemplate>
+                        <asp:Label ID="lblId" runat="server" Text='<%# Eval("MedicareServicesId1") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Medicare Service" >
                     <ItemTemplate>
                         <asp:Label ID="lblmedicareservice" runat="server" Text='<%# Eval("Medicare_service1") %>'></asp:Label>

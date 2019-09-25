@@ -105,5 +105,51 @@ namespace DAL
             _sqlConnection.Close();
 
         }
+
+        public DataTable GetPendingApprovalData()
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "GetPendingUsers";
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+                return dt;
+            else
+                return new DataTable();
+        }
+
+        public bool approveUsers(int id, string tableName, string type)
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "ApproveUsers";
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            sqlCommand.Parameters.AddWithValue("@table", tableName);
+            sqlCommand.Parameters.AddWithValue("@type", type);
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                if (!dt.Rows[0][0].ToString().Contains("Fail"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -19,8 +19,7 @@ namespace Models
         string EmailId;
         string UserName;
         string Password;
-        //bool Isapproved;
-        //DateTime Isapproved_On;
+   
 
         public int AdminId1
         {
@@ -152,32 +151,7 @@ namespace Models
             }
         }
 
-        //public bool Isapproved1
-        //{
-        //    get
-        //    {
-        //        return Isapproved;
-        //    }
-
-        //    set
-        //    {
-        //        Isapproved = value;
-        //    }
-        //}
-
-        //public DateTime Isapproved_On1
-        //{
-        //    get
-        //    {
-        //        return Isapproved_On;
-        //    }
-
-        //    set
-        //    {
-        //        Isapproved_On = value;
-        //    }
-        //}
-
+      
         public string UserName1
         {
             get
@@ -190,6 +164,9 @@ namespace Models
                 UserName = value;
             }
         }
+
+       
+        
 
         public AdminDetails()
         {
@@ -208,9 +185,8 @@ namespace Models
             this.EmailId = EmailId;
             this.UserName = UserName;
             this.Password = Password;
-            //this.Isapproved = Isapproved;
-            //this.Isapproved_On = Isapproved_On;
-            //, bool Isapproved, DateTime Isapproved_On
+          
+
         }
 
     }

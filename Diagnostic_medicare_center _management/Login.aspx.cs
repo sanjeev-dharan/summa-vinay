@@ -44,7 +44,8 @@ namespace Diagnostic_medicare_center__management
                 }
                 else
                 {
-                    lblMsg.Text = "Invalid username or password";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
+                    //lblMsg.Text = "Invalid username or password";
                 }
                 
             }
@@ -70,6 +71,7 @@ namespace Diagnostic_medicare_center__management
                 }
                 else
                 {
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
                     lblMsg.Text = "Invalid username or password";
                 }
 

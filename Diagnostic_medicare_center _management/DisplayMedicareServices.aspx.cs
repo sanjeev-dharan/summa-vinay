@@ -121,9 +121,14 @@ namespace Diagnostic_medicare_center__management
 
         protected void MserviceDetails_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            Response.Redirect("~/EditMedicareServices.aspx");
-            //MserviceDetails.EditIndex = e.NewEditIndex;
-            //LoadData();
+
+            GridViewRow row = MserviceDetails.Rows[e.NewEditIndex];
+            string name = ((row.FindControl("lblmedicareservice") as Label).Text);
+            string description = ((row.FindControl("lblservicedescription") as Label).Text);
+            int amount = int.Parse((row.FindControl("lblamount") as Label).Text);
+            int id = int.Parse((row.FindControl("lblId") as Label).Text);
+            Response.Redirect("~/medicareservicesform.aspx?name=" + name + "&servicedescription="+ description +"&amount="+ amount+"&medicareservicesid="+id);
+
         }
     }
 }
