@@ -14,10 +14,10 @@ namespace DAL
         public List<DoctorDetails> DisplayDoctorDetails()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand();
+            SqlCommand _sqlCommand = new SqlCommand("getdoctordetails", _sqlConnection);
             _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "select * from Doctor";
             SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
             DataTable _dataTable = new DataTable();
             _sqlDataAdapter.Fill(_dataTable);
@@ -63,21 +63,7 @@ namespace DAL
             }
         }
 
-        public void  RemoveDoctor(string name)
-        {
-            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            _sqlConnection.Open();
-            SqlCommand _sqlCommand = new SqlCommand();
-            _sqlCommand.CommandType = CommandType.Text;
-            _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "delete  from Doctor where FirstName=@doctorname";
-            _sqlCommand.Parameters.AddWithValue("@doctorname",name);
-            int res=_sqlCommand.ExecuteNonQuery();
-            _sqlConnection.Close();
-
-
-
-        }
+       
 
         public void ModifyDoctorDetails()
         {
@@ -166,5 +152,22 @@ namespace DAL
                 return false;
             }
         }
+
+        public void RemoveDoctor(int DoctorID)
+        {
+            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
+            _sqlConnection.Open();
+            SqlCommand _sqlCommand = new SqlCommand();
+            _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.Connection = _sqlConnection;
+            _sqlCommand.CommandText = "delete  from Doctor where DoctorID=@doctorid";
+            _sqlCommand.Parameters.AddWithValue("@doctorid", DoctorID);
+            int res = _sqlCommand.ExecuteNonQuery();
+            _sqlConnection.Close();
+
+
+
+        
+    }
     }
 }

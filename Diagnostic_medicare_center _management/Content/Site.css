@@ -101,6 +101,15 @@ article {
  align-content:center;
 
 }
+#txtapprove
+{
+    overflow-y:scroll;
+ height:450px;
+ /*padding-top:3%;*/
+ padding-bottom:2%;
+ align-content:center;
+
+}
 .messageColor
 {
     color:red;

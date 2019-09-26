@@ -9,6 +9,11 @@
              AutoGenerateColumns="False" OnRowDeleting="gdvDoctorDetails_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:TemplateField HeaderText="ID" Visible="false" >
+                    <ItemTemplate>
+                        <asp:Label ID="lblID" runat="server" Text='<%# Eval("DoctorID1") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Name" >
                     <ItemTemplate>
                         <asp:Label ID="lblfname" runat="server" Text='<%# Eval("FirstName1") %>'></asp:Label>

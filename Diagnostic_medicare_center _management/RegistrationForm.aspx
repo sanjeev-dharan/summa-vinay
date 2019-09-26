@@ -112,7 +112,7 @@
             <asp:Label runat="server" for="txtdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtdob" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -214,7 +214,7 @@
             <asp:Label runat="server" for="txtDoctordob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtDoctordob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDoctordob" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -396,7 +396,7 @@
             <asp:Label runat="server" for="txtPatientdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtPatientdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPatientdob" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -539,7 +539,7 @@
             <asp:Label runat="server" for="txtAgentdob">Date Of Birth</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtAgentdob" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtAgentdob" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>

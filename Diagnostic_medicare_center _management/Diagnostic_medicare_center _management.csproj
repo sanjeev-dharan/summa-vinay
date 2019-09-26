@@ -211,6 +211,7 @@
     <Content Include="DisplayMedicareServices.aspx" />
     <Content Include="Displaypatientdetails.aspx" />
     <Content Include="medicareservicesform.aspx" />
+    <Content Include="Medicareservicesview.aspx" />
     <Content Include="TestResultsdisplay.aspx" />
     <Content Include="Doctor.aspx" />
     <Content Include="EditMedicareServices.aspx" />
@@ -485,6 +486,13 @@
     </Compile>
     <Compile Include="medicareservicesform.aspx.designer.cs">
       <DependentUpon>medicareservicesform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Medicareservicesview.aspx.cs">
+      <DependentUpon>Medicareservicesview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Medicareservicesview.aspx.designer.cs">
+      <DependentUpon>Medicareservicesview.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestResultsdisplay.aspx.cs">
       <DependentUpon>TestResultsdisplay.aspx</DependentUpon>

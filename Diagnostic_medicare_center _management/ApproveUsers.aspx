@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApproveUsers.aspx.cs" Inherits="Diagnostic_medicare_center__management.ApproveUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<div style="margin-top:10%;margin-left:5%;">
+<div id="txtapprove" style="margin-top:5%;margin-left:5%;">
     <center>
         <asp:Label runat="server" ID="lblMsg"></asp:Label>
     </center>

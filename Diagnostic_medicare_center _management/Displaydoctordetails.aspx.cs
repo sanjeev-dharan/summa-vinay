@@ -35,31 +35,31 @@ namespace Diagnostic_medicare_center__management
 
         protected void gdvDoctorDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-      
+
             GridViewRow row = gdvDoctorDetails.Rows[e.RowIndex];
-            string name = (row.FindControl("lblfname") as Label).Text;
+            int id = int.Parse((row.FindControl("lblID") as Label).Text);
             DoctorDetails doctordetails = new DoctorDetails();
             DoctorDetailsSql doctordetailssql = new DoctorDetailsSql();
-            List<DoctorDetails> docdetails = doctordetailssql.DisplayDoctorDetails(); 
-                      
-            if(docdetails.Count>0)
+            List<DoctorDetails> docdetails = doctordetailssql.DisplayDoctorDetails();
+
+            if (docdetails.Count > 0)
             {
                 for (int i = 0; i < docdetails.Count; i++)
                 {
-                    if (docdetails[i].FirstName1 == name)
+                    if (docdetails[i].DoctorID1 == id)
                     {
                         docdetails.RemoveAt(i);
                     }
                 }
 
-                doctordetailssql.RemoveDoctor(name);
+                doctordetailssql.RemoveDoctor(id);
                 lblStatus.Text = "Doctor Details Deleted Successfully";
                 GetDoctor();
 
             }
-            
 
-            
+
+
 
         }
         

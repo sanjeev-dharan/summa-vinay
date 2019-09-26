@@ -4,51 +4,16 @@
         <asp:Label runat="server" ID="headStatus" CssClass="titleStatus"></asp:Label>
     <div id="displayTestResult" runat="server" class="testresult1"  >
 
-        <asp:GridView runat="server" ID="gdvTestresults" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%"<%-- OnRowCommand="examData_RowCommand"--%>>
+        <asp:GridView runat="server" ID="gdvTestresults" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%">
+     
+
         <Columns>
-            <asp:TemplateField HeaderText="">
-                <ItemTemplate>
-                    <div class="wrap">
-                        <div class="content-box">
-                            <h2>
-                                <asp:Label ID="LblHead" runat="server"  Text="Exam Description: "></asp:Label>
-                                <asp:Label ID="lblExName" runat="server"  Text='<%# Eval("ReportId") %>'></asp:Label></h2>
-                            <h6>
-                                <asp:Label ID="LblSubHead1" runat="server"  Text="Exam Code: "></asp:Label>
-                                <asp:Label ID="lblExId" runat="server" Text='<%# Eval("PatientId1") %>'></asp:Label></h6>
-                            <h6>
-                                <asp:Label ID="LblSubHead2" runat="server"  Text="Skill Set: "></asp:Label>
-                                <asp:Label ID="lblSkillSet" runat="server" Text='<%# Eval("Doctorid") %>'></asp:Label></h6>
-                            <h6>
-                                <asp:Label ID="LblSubHead3" runat="server"  Text="Competancy Level: "></asp:Label>
-                                <asp:Label ID="lblCompetancy" runat="server" Text='<%# Eval("MedicareService") %>'></asp:Label></h6>
-                            <h6>
-                                <asp:Label ID="LblSubHead4" runat="server"  Text="Assessment Time: "></asp:Label>
-                                <asp:Label ID="lblExTime" runat="server" Text='<%# Eval("AgentId") %>'></asp:Label></h6>
-                            <h6>
-                               <%-- <asp:Label ID="LblSubHead5" runat="server"  Text="Assessment Date: "></asp:Label>
-                                <asp:Label ID="lblExDate" runat="server" Text='<%# DateTime.Parse(Eval("Diag1_normal_value").ToString()).ToString("dd/MM/yyyy") %>'></asp:Label></h6>--%>
-                           <%-- 
-                            <asp:Button ID="btnDel" runat="server" CssClass="buttonDel" Text="Delete"  CommandName="DeleteButton" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
-                            <asp:Button ID="btnEdit" runat="server" CssClass="buttonEdit" Text="Edit"  CommandName="EditButton" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>--%>
-                                        
-
-                        </div>
-                </ItemTemplate>
-                
-            </asp:TemplateField>
-            <%--<asp:CommandField EditText="Edit" DeleteText="Delete" ButtonType="Button" ShowEditButton="true" ShowDeleteButton="true" />--%>
-        </Columns>
-
-    </asp:GridView>
-
-       <%-- <Columns>--%>
-            <%--<asp:TemplateField HeaderText="ReportId">
+            <asp:TemplateField HeaderText="ReportId">
                 <ItemTemplate>
                     <asp:Label ID="lblReportId" runat="server" Text='<%# Eval("ReportId") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>--%>
-          <%--  <asp:TemplateField HeaderText="PatientId">
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="PatientId">
                 <ItemTemplate>
                     <asp:Label ID="lblPatientId" runat="server" Text='<%# Eval("PatientId1") %>'></asp:Label>
                 </ItemTemplate>
@@ -74,12 +39,12 @@
                     <asp:Label ID="lblservicedate" runat="server" Text='<%# Eval("Servicedate") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <%--<asp:TemplateField HeaderText="LastName">
+            <asp:TemplateField HeaderText="LastName">
                     <ItemTemplate>
                         <asp:Label ID="lblAgentlastName" runat="server" Text='<%# Eval("LastName1") %>'></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>--%>
-           <%-- <asp:TemplateField HeaderText=" Testresultdate" Visible="false">
+                </asp:TemplateField>
+            <asp:TemplateField HeaderText=" Testresultdate" Visible="false">
                 <ItemTemplate>
                     <asp:Label ID="lbltestresultdate" runat="server" Text='<%# Eval("Testresultdate") %>'></asp:Label>
                 </ItemTemplate>
@@ -153,12 +118,12 @@
                 <ItemTemplate>
                     <asp:Label ID="lblotherinfo" runat="server" Text='<%# Eval("Otherinfo") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>--%>
---%>
+            </asp:TemplateField>
 
 
-        <%--</Columns>--%>
-     <%--   <EditRowStyle BackColor="#2461BF" />
+
+        </Columns>
+        <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
@@ -167,8 +132,8 @@
         <SortedAscendingCellStyle BackColor="#F5F7FB" />
         <SortedAscendingHeaderStyle BackColor="#6D95E1" />
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />--%>
-    <%--</asp:GridView>--%>
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+    </asp:GridView>
          </div>
 
     <br />

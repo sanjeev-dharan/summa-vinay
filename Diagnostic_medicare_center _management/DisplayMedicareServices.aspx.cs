@@ -1,24 +1,23 @@
-﻿using System;
+﻿using DAL;
+using Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DAL;
-using Models;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace Diagnostic_medicare_center__management
 {
-    public partial class DisplayMedicareServices : System.Web.UI.Page
+    public partial class DisplayMedicareServices1 : System.Web.UI.Page
     {
         
-        protected void Page_Load(object sender, EventArgs e)
+              protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            GetMedicareServices();
+            if (!IsPostBack)
+                GetMedicareServices();
         }
         public void GetMedicareServices()
         {
@@ -61,7 +60,7 @@ namespace Diagnostic_medicare_center__management
             }
         }
 
-      
+
 
         public void LoadData()
         {
@@ -83,13 +82,13 @@ namespace Diagnostic_medicare_center__management
             SqlConnection _sqlconnection = ConnectionHandler.GetConnection();
             TextBox servicename = MserviceDetails.Rows[e.RowIndex].FindControl("lblmedicareservice") as TextBox;
             TextBox servicedescription = MserviceDetails.Rows[e.RowIndex].FindControl("lblservicedescription") as TextBox;
-            int amount=Convert.ToInt16(MserviceDetails.DataKeys[e.RowIndex].Values["lblamount"].ToString());
+            int amount = Convert.ToInt16(MserviceDetails.DataKeys[e.RowIndex].Values["lblamount"].ToString());
             _sqlconnection.Open();
             SqlCommand _sqlCommand = new SqlCommand();
             _sqlCommand.CommandType = CommandType.Text;
             _sqlCommand.Connection = _sqlconnection;
             _sqlCommand.CommandText = "update  Medicare_services set Service_Description=@servicedescription,Amount=@amount where Medicare_service=@medicareservice";
-              _sqlCommand.Parameters.AddWithValue("@MedicareService",servicename.Text);
+            _sqlCommand.Parameters.AddWithValue("@MedicareService", servicename.Text);
             _sqlCommand.Parameters.AddWithValue("@ServiceDescription", servicedescription.Text);
             _sqlCommand.Parameters.AddWithValue("@Amount", amount);
             int i = _sqlCommand.ExecuteNonQuery();
@@ -127,8 +126,9 @@ namespace Diagnostic_medicare_center__management
             string description = ((row.FindControl("lblservicedescription") as Label).Text);
             int amount = int.Parse((row.FindControl("lblamount") as Label).Text);
             int id = int.Parse((row.FindControl("lblId") as Label).Text);
-            Response.Redirect("~/medicareservicesform.aspx?name=" + name + "&servicedescription="+ description +"&amount="+ amount+"&medicareservicesid="+id);
+            Response.Redirect("~/medicareservicesform.aspx?name=" + name + "&servicedescription=" + description + "&amount=" + amount + "&medicareservicesid=" + id);
 
         }
     }
 }
+    

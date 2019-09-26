@@ -10,34 +10,16 @@
 namespace Diagnostic_medicare_center__management {
     
     
-    public partial class DisplayMedicareServices1 {
+    public partial class Medicareservicesview {
         
         /// <summary>
-        /// headStatusservices control.
+        /// Mservice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label headStatusservices;
-        
-        /// <summary>
-        /// MserviceDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MserviceDetails;
-        
-        /// <summary>
-        /// addservices control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink addservices;
+        protected global::System.Web.UI.WebControls.GridView Mservice;
         
         /// <summary>
         /// lblStatus control.

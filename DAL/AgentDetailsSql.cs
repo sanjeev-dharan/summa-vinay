@@ -14,10 +14,10 @@ namespace DAL
         public List<AgentDetails> DisplayAgentDetails()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand();
+            SqlCommand _sqlCommand = new SqlCommand("getagentdetails", _sqlConnection);
             _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "select * from Agent";
             SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
             DataTable _dataTable = new DataTable();
             _sqlDataAdapter.Fill(_dataTable);

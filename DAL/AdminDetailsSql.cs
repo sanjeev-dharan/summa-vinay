@@ -44,10 +44,10 @@ namespace DAL
         public List<AdminDetails> DisplayAdminDetails()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand();
+            SqlCommand _sqlCommand = new SqlCommand("getadmindetails", _sqlConnection);
             _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "select * from Admin";
             SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
             DataTable _dataTable = new DataTable();
             _sqlDataAdapter.Fill(_dataTable);

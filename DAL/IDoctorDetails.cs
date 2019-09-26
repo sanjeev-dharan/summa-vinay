@@ -14,7 +14,7 @@ namespace DAL
         void  RegDoctorDetails(DoctorDetails doctorDetails);
         List<DoctorDetails> DisplayDoctorDetails();
         void ModifyDoctorDetails();
-        void RemoveDoctor(string Doctorname);
+        void RemoveDoctor(int DoctorID);
         DataTable GetPendingApprovalData();
         bool approveUsers(int id, string tableName, string type);
     }

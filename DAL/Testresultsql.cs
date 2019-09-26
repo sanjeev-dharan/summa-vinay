@@ -48,10 +48,10 @@ namespace DAL
         public List<TestResultdetails> DisplayTestResults()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand();
+            SqlCommand _sqlCommand = new SqlCommand("gettestresults", _sqlConnection);
             _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "select * from MedicalTestHistory";
             SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
             DataTable _dataTable = new DataTable();
             _sqlDataAdapter.Fill(_dataTable);

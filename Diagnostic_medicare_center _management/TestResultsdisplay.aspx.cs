@@ -19,8 +19,8 @@ namespace Diagnostic_medicare_center__management
         {
             Testresultsql testresultsql = new Testresultsql();
             List<TestResultdetails> testresults = testresultsql.DisplayTestResults();
-            gdvTestresults.DataSource = testresults;
-            gdvTestresults.DataBind();
+            //gdvTestresults.DataSource = testresults;
+            //gdvTestresults.DataBind();
             if (testresults.Count == 0)
             {
 

@@ -147,12 +147,12 @@
         return false;
     }
    
-    else if (uname.test(username) == false) {
-        alert("UserName should be an Alphabet");
-        document.getElementById("txtDoctorUserName").style.borderColor = "#FF0000";
-        document.getElementById("txtDoctorUserName").focus();
-        return false;
-    }
+    //else if (uname.test(username) == false) {
+    //    alert("UserName should be an Alphabet");
+    //    document.getElementById("txtDoctorUserName").style.borderColor = "#FF0000";
+    //    document.getElementById("txtDoctorUserName").focus();
+    //    return false;
+    //}
      
     else if (password == "") {
         alert("Please update the highlighted mandatory password field(s)");
@@ -395,19 +395,19 @@ function admin_validate() {
         document.getElementById("txtAdminUserName").focus();
         return false;
     }
-    else if (username.length < 8 || username.length > 15) {
-        alert("Give strong password");
+    else if (username.length < 5 || username.length > 15) {
+        alert("USerName Length Should be in between 5 and 15.");
         document.getElementById("txtAdminUserName").style.borderColor = "#FF0000";
         document.getElementById("txtAdminUserName").focus();
 
         return false;
     }
-    else if (uname.test(username) == false) {
-        alert("UserName should be an Alphabet");
-        document.getElementById("txtAdminUserName").style.borderColor = "#FF0000";
-        document.getElementById("txtAdminUserName").focus();
-        return false;
-    }
+    //else if (uname.test(username) == false) {
+    //    alert("UserName should be an Alphabet");
+    //    document.getElementById("txtAdminUserName").style.borderColor = "#FF0000";
+    //    document.getElementById("txtAdminUserName").focus();
+    //    return false;
+    //}
 
     else if (password == "") {
         alert("Please update the highlighted mandatory password field(s)");
@@ -561,25 +561,25 @@ function patient_validate() {
         return false;
     }
     else if (username == "") {
-        alert("Please update the highlighted mandatory password field(s)");
+        alert("Please update the highlighted mandatory UserName field(s)");
         document.getElementById("txtPatientUserName").style.borderColor = "#FF0000";
         document.getElementById("txtPatientUserName").focus();
         return false;
     }
-    else if (username.length < 8 || username.length > 15) {
-        alert("Give strong password");
+    else if (username.length < 5 || username.length > 15) {
+        alert("User Name should be in between 5 and 15");
         document.getElementById("txtPatientUserName").style.borderColor = "#FF0000";
         document.getElementById("txtPatientUserName").focus();
 
 
         return false;
     }
-    else if (uname.test(username) == false) {
-        alert("UserName should be an Alphabet");
-        document.getElementById("txtPatientPasswd").style.borderColor = "#FF0000";
-        document.getElementById("txtPatientPasswd").focus();
-        return false;
-    }
+    //else if (uname.test(username) == false) {
+    //    alert("UserName should be an Alphabet");
+    //    document.getElementById("txtPatientPasswd").style.borderColor = "#FF0000";
+    //    document.getElementById("txtPatientPasswd").focus();
+    //    return false;
+    //}
 
     else if (password == "") {
         alert("Please update the highlighted mandatory password field(s)");
@@ -784,24 +784,24 @@ function agent_validate() {
         return false;
     }
     else if (username == "") {
-        alert("Please update the highlighted mandatory password field(s)");
+        alert("Please update the highlighted mandatory user name field(s)");
         document.getElementById("txtAgentUserName").style.borderColor = "#FF0000";
         document.getElementById("txtAgentUserName").focus();
         return false;
     }
-    else if (username.length < 8 || username.length > 15) {
-        alert("Give strong password");
+    else if (username.length < 5 || username.length > 15) {
+        alert("User Name Should be in between 5 and 15");
         document.getElementById("txtAgentUserName").style.borderColor = "#FF0000";
         document.getElementById("txtAgentUserName").focus();
 
         return false;
     }
-    else if (uname.test(username) == false) {
-        alert("UserName should be an Alphabet");
-        document.getElementById("txtAgentUserName").style.borderColor = "#FF0000";
-        document.getElementById("txtAgentUserName").focus();
-        return false;
-    }
+    //else if (uname.test(username) == false) {
+    //    alert("UserName should be an Alphabet");
+    //    document.getElementById("txtAgentUserName").style.borderColor = "#FF0000";
+    //    document.getElementById("txtAgentUserName").focus();
+    //    return false;
+    //}
 
     else if (password == "") {
         alert("Please update the highlighted mandatory password field(s)");
@@ -872,7 +872,7 @@ function service_validate()
 {
     //alert("0fyjtf");
     var medicareservice = document.getElementById("txtMS").value;
-    var mservice = /^[a-zA-Z]*$/;
+    var mservice = /^[a-zA-Z ]*$/;
     var servicedescription = document.getElementById("txtMSDescription").value;
     var amount = document.getElementById("txtAmount").value;
     var num = /^[0-9]*$/;

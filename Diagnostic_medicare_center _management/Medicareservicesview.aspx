@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DisplayMedicareServices.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayMedicareServices1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Medicareservicesview.aspx.cs" Inherits="Diagnostic_medicare_center__management.Medicareservicesview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <center>
-    <asp:Label ID="headStatusservices" runat="server"></asp:Label>
- <asp:GridView runat="server" ID="MserviceDetails"
-             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="MserviceDetails_RowDeleting" OnRowEditing="MserviceDetails_RowEditing" OnRowUpdating="MserviceDetails_RowUpdating">
+   
+     <asp:GridView runat="server" ID="Mservice"
+             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" >
          <AlternatingRowStyle BackColor="White" />
          <Columns>
              <asp:TemplateField HeaderText="ID" visible="false" >
@@ -26,7 +26,7 @@
                         <asp:Label ID="lblamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-              <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" HeaderText="Action"/>
+              
              </Columns>
          
          <EditRowStyle BackColor="#2461BF" />
@@ -40,8 +40,8 @@
          <SortedDescendingCellStyle BackColor="#E9EBEF" />
          <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-       
-    <asp:HyperLink ID="addservices" runat="server" Text="AddMedicareServices" style="align-content:center" NavigateUrl="~/servicesForm.aspx"></asp:HyperLink>
-         </center>
+       </center>
+   
     <center> <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label></center>
 </asp:Content>
+

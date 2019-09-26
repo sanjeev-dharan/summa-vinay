@@ -173,11 +173,11 @@
                                         <AnonymousTemplate>
                                             <ul class="nav navbar-nav navbar-right">
                                                            <li><a runat="server" href="~/Patient.aspx">Home</a></li>
-                                               <li><a runat="server" href="~/DisplayMedicareServices.aspx">Medicare services</a></li>
-                                               <li><a runat="server" href="~/BookAppointment.aspx">Book Appointment</a></li>
-                                                <li><a runat="server" href="~/Doctor.aspx">Doctor</a></li>
+                                               <li><a runat="server" href="Medicareservicesview.aspx">Medicare services</a></li>
+                                              
+                                                <li><a runat="server" href="~/DisplayDoctordetails_R.aspx">Doctor</a></li>
                                                
-                                                <li><a runat="server" href="~/testdetails.aspx">Test Results</a></li>
+                                                <li><a runat="server" href="#">Test Results</a></li>
                                                 <li><asp:LinkButton runat="server" ID="lblLogout" Text="Logout" OnClick="lblLogout_Click"></asp:LinkButton></li>
                                             </ul>
                                         </AnonymousTemplate>                                        
@@ -190,11 +190,11 @@
                                         <AnonymousTemplate>
                                             <ul class="nav navbar-nav navbar-right">
                                                            <li><a runat="server" href="~/Agent.aspx">Home</a></li>
-                                               <li><a runat="server" href="~/DisplayMedicareServices.aspx">Medicare services</a></li>
+                                               <li><a runat="server" href="Medicareservicesview.aspx">Medicare services</a></li>
                                                <li><a runat="server" href="~/BookAppointment.aspx">Book Appointment</a></li>
                                                 <li><a runat="server" href="~/DisplayDoctordetails_R.aspx">Doctor</a></li>
                               
-                                                <li><a runat="server" href="~/TestResults.aspx">Test Results</a></li>
+                                                <li><a runat="server" href="#">Test Results</a></li>
                                                 <li><asp:LinkButton runat="server" ID="lblLogout" Text="Logout" OnClick="lblLogout_Click"></asp:LinkButton></li>
                                             </ul>
                                         </AnonymousTemplate>                                        
