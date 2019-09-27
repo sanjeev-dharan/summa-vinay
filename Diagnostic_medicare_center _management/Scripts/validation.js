@@ -923,4 +923,4 @@ function service_validate()
 
 }
 //--------------------testResult_Validation-------------------------
-var medicareservice = document.getElementById("txtMS").value;
+

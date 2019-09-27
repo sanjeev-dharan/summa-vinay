@@ -34,7 +34,8 @@ namespace Diagnostic_medicare_center__management
                     AltContactNumber1 = double.Parse(txtAltcntct.Text),
                     EmailId1 = txtEmail.Text,
                     UserName1 = txtAdminUserName.Text,
-                    Password1 = txtPasswd.Text
+                    Password1 = txtPasswd.Text,
+                    Isapproved1=false
 
 
 
@@ -85,7 +86,8 @@ namespace Diagnostic_medicare_center__management
                     Specialty1 = txtDoctorSpeciality.Text,
                     Workhours1 = int.Parse(txtDoctorWorkhours.Text),
                     HospitalName1 = txtDoctorHspName.Text,
-                    MedicareServiceID1 = int.Parse(txtDoctorMediServID.Text)
+                    MedicareServiceID1 = int.Parse(txtDoctorMediServID.Text),
+                    Isapproved1 = false
                 };
                 doctorDetailsSql.RegDoctorDetails(doctorDetails);
             }
@@ -116,7 +118,8 @@ namespace Diagnostic_medicare_center__management
                 City1 = txtPatientcity.Text,
                 State1 = txtPatientstate.Text,
                 Zipcode1 = int.Parse(txtPatientzip.Text),
-              
+                Isapproved1 = false
+
             };
             patientDetailsSql.RegPatientDetails(patientDetails);
 
@@ -141,8 +144,9 @@ namespace Diagnostic_medicare_center__management
                 AddressLine21 = txtAgentAltAddress.Text,
                 City1 = txtAgentcity.Text,
                 State1 = txtAgentstate.Text,
-                Zipcode1 = int.Parse(txtAgentzip.Text),
 
+                Zipcode1 = int.Parse(txtAgentzip.Text),
+                Isapproved1 = false
             };
             agentDetailsSql.RegAgentDetails(agentDetails);
 

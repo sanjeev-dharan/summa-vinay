@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DisplayMedicareServices.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayMedicareServices1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <center>
-    <asp:Label ID="headStatusservices" runat="server"></asp:Label>
+    <asp:Label ID="headStatusservices" runat="server" CssClass="headermsg"></asp:Label>
  <asp:GridView runat="server" ID="MserviceDetails"
              AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="MserviceDetails_RowDeleting" OnRowEditing="MserviceDetails_RowEditing" OnRowUpdating="MserviceDetails_RowUpdating">
          <AlternatingRowStyle BackColor="White" />

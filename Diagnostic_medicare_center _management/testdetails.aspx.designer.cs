@@ -31,40 +31,40 @@ namespace Diagnostic_medicare_center__management {
         protected global::System.Web.UI.WebControls.Table tbltestdetails;
         
         /// <summary>
-        /// txtpatientid control.
+        /// ddlpatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpatientid;
+        protected global::System.Web.UI.WebControls.DropDownList ddlpatient;
         
         /// <summary>
-        /// txtdoctorid control.
+        /// ddldoctor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdoctorid;
+        protected global::System.Web.UI.WebControls.DropDownList ddldoctor;
         
         /// <summary>
-        /// txtmedicareservice control.
+        /// ddlmedicareservices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmedicareservice;
+        protected global::System.Web.UI.WebControls.DropDownList ddlmedicareservices;
         
         /// <summary>
-        /// txtagentid control.
+        /// ddlagent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtagentid;
+        protected global::System.Web.UI.WebControls.DropDownList ddlagent;
         
         /// <summary>
         /// txtservicedate control.

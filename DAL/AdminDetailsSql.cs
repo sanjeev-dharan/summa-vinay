@@ -41,6 +41,7 @@ namespace DAL
             }
         }
 
+
         public List<AdminDetails> DisplayAdminDetails()
         {
             SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
@@ -68,12 +69,13 @@ namespace DAL
                          double.Parse(_dataRow["AltContactNumber"].ToString()),
                          _dataRow["EmailId"].ToString(),
                          _dataRow["UserName"].ToString(),
-                         _dataRow["Password"].ToString()
+                         _dataRow["Password"].ToString(),
+                         _dataRow["Isapproved"].ToString().Equals("True")?true:false,
+                            DateTime.Parse(_dataRow["Isapproved_on"].ToString())
+
+
                     )
-
-
-
-                        );
+                      );
                 }
                 return adminDetails;
             }
@@ -83,49 +85,56 @@ namespace DAL
             }
         }
 
-
-    
-
-    public AdminDetails GetAdmin(int AdminId)
+        public AdminDetails GetAdmin(int AdminId)
         {
-            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand("updateadmindetails");
-            _sqlCommand.CommandType = CommandType.Text;
-            _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.CommandText = "select top 1 * from Admin where AdminId=@adminid";
-            _sqlCommand.Parameters.AddWithValue("@adminid", AdminId);
-            SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
-            DataTable _dataTable = new DataTable();
-            _sqlDataAdapter.Fill(_dataTable);
-            
-            if (_dataTable.Rows.Count > 0)
-            {
-                DataRow _dataRow = _dataTable.Rows[0];
-                AdminDetails adminDetails = new AdminDetails
-                        (
-                        int.Parse(_dataRow["AdminId"].ToString()),
-                        _dataRow["FirstName"].ToString(),
-                        _dataRow["LastName"].ToString(),
-                        int.Parse(_dataRow["Age"].ToString()),
-                        _dataRow["Gender"].ToString(),
-                        _dataRow["DoB"].ToString(),
-                        double.Parse(_dataRow["ContactNumber"].ToString()),
-                         double.Parse(_dataRow["AltContactNumber"].ToString()),
-                         _dataRow["EmailId"].ToString(),
-                         _dataRow["UserName"].ToString(),
-                         _dataRow["Password"].ToString()
-                      )
-
-                        ;
-                return adminDetails;
-            }
-               
-            
-            else
-            {
-                return new AdminDetails();
-            }
+            throw new NotImplementedException();
         }
+
+
+
+
+        //public AdminDetails GetAdmin(int AdminId)
+        //    {
+        //        SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
+        //        SqlCommand _sqlCommand = new SqlCommand("updateadmindetails");
+        //        _sqlCommand.CommandType = CommandType.Text;
+        //        _sqlCommand.Connection = _sqlConnection;
+        //        _sqlCommand.CommandText = "select top 1 * from Admin where AdminId=@adminid";
+        //        _sqlCommand.Parameters.AddWithValue("@adminid", AdminId);
+        //        SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
+        //        DataTable _dataTable = new DataTable();
+        //        _sqlDataAdapter.Fill(_dataTable);
+
+        //        if (_dataTable.Rows.Count > 0)
+        //        {
+        //            DataRow _dataRow = _dataTable.Rows[0];
+        //            AdminDetails adminDetails = new AdminDetails
+        //                    (
+        //                    int.Parse(_dataRow["AdminId"].ToString()),
+        //                    _dataRow["FirstName"].ToString(),
+        //                    _dataRow["LastName"].ToString(),
+        //                    int.Parse(_dataRow["Age"].ToString()),
+        //                    _dataRow["Gender"].ToString(),
+        //                    _dataRow["DoB"].ToString(),
+        //                    double.Parse(_dataRow["ContactNumber"].ToString()),
+        //                     double.Parse(_dataRow["AltContactNumber"].ToString()),
+        //                     _dataRow["EmailId"].ToString(),
+        //                     _dataRow["UserName"].ToString(),
+        //                     _dataRow["Password"].ToString()
+
+
+        //                  )
+
+        //                    ;
+        //            return adminDetails;
+        //        }
+
+
+        //        else
+        //        {
+        //            return new AdminDetails();
+        //        }
+        //    }
 
         public DataTable GetPendingApprovalData()
         {
@@ -141,6 +150,22 @@ namespace DAL
                 return dt;
             else
              return new DataTable(); 
+
+        }
+        public DataTable GetPendingAdminData()
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "getpendingadmins";
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+                return dt;
+            else
+                return new DataTable();
 
         }
 

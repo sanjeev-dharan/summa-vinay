@@ -6,25 +6,56 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using Models;
+using System.Data;
 namespace Diagnostic_medicare_center__management
 {
     public partial class testdetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                getdata();
+            }
         }     
+        public void getdata()
+        {
+            Testresultsql testresultssql = new Testresultsql();
+            DataSet ds = testresultssql.Getalldata();
+            ddlpatient.DataSource = ds.Tables[0];
+            ddlpatient.DataValueField = "vid";
+            ddlpatient.DataTextField = "ID";
+            ddlpatient.DataBind();
+            ddlpatient.Items.Insert(0, new ListItem { Value = "", Text = "--select--" });
+
+          ddldoctor.DataSource = ds.Tables[1];
+            ddldoctor.DataValueField = "vid";
+            ddldoctor.DataTextField = "ID";
+            ddldoctor.DataBind();
+            ddldoctor.Items.Insert(0, new ListItem { Value = "", Text = "--select--" });
+            ddlmedicareservices.DataSource = ds.Tables[2];
+            ddlmedicareservices.DataValueField = "vid";
+            ddlmedicareservices.DataTextField = "ID";
+            ddlmedicareservices.DataBind();
+            ddlmedicareservices.Items.Insert(0, new ListItem { Value = "", Text = "--select--" });
+            ddlagent.DataSource = ds.Tables[3];
+            ddlagent.DataValueField = "vid";
+            ddlagent.DataTextField = "ID";
+            ddlagent.DataBind();
+            ddlagent.Items.Insert(0, new ListItem { Value = "", Text = "--select--" });
+        }
         protected void testresultssubmit_Click(object sender, EventArgs e)
         {
             
             Testresultsql testresultssql = new Testresultsql();
+           
             TestResultdetails testresultdetails = new TestResultdetails
             {
                
-                PatientId1=int.Parse(txtpatientid.Text.ToString()),
-                Doctorid=int.Parse(txtdoctorid.Text.ToString()),
-                MedicareService =int.Parse( txtmedicareservice.Text.ToString()),
-                AgentId =int.Parse(txtagentid.Text.ToString()),
+                PatientId1= int.Parse(ddlpatient.SelectedItem.Value),
+                Doctorid =int.Parse(ddldoctor.SelectedItem.Value),
+                MedicareService =int.Parse( ddlmedicareservices.SelectedItem.Value),
+                AgentId =int.Parse(ddlagent.SelectedItem.Value),
                  
                 Servicedate= txtservicedate.Text,
                 Testresultdate= txttestresultdate.Text,

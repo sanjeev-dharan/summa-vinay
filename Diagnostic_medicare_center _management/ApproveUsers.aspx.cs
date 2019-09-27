@@ -19,7 +19,7 @@ namespace Diagnostic_medicare_center__management
 
         public void GetData()
         {
-            DataTable dt= new AdminDetailsSql().GetPendingApprovalData();
+            DataTable dt= new AdminDetailsSql().GetPendingApprovalData();            
             if (dt.Rows.Count > 0)
                 gdvData.DataSource = dt;
                 gdvData.DataBind();

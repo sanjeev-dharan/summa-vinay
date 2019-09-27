@@ -10,15 +10,24 @@
 namespace Diagnostic_medicare_center__management {
     
     
-    public partial class Doctor {
+    public partial class ApproveAdmin {
         
         /// <summary>
-        /// gdvappointment control.
+        /// lblMsgAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvappointment;
+        protected global::System.Web.UI.WebControls.Label lblMsgAdmin;
+        
+        /// <summary>
+        /// gdvDataAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvDataAdmin;
     }
 }

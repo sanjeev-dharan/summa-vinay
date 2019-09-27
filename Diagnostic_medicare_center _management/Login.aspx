@@ -8,7 +8,7 @@
        
         <asp:DropDownList CssClass="form-control" runat="server" ID="ddlRoleList"  >
             <asp:ListItem value="" Text="--Select Role--"></asp:ListItem>
-            <asp:ListItem value="s_admin" Text="Super Admin"></asp:ListItem>
+            <asp:ListItem value="s_admin" Text="SuperAdmin"></asp:ListItem>
             <asp:ListItem Value="Admin" Text="Admin"></asp:ListItem>
             <asp:ListItem Value="Doctor" Text="Doctor"></asp:ListItem>
             <asp:ListItem Value="Patient" Text="Patient"></asp:ListItem>

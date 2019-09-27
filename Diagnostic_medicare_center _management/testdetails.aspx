@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="testdetails.aspx.cs" Inherits="Diagnostic_medicare_center__management.testdetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+  
     <div id="details" runat="server" style=" font-weight:bold" CssClass="doc_reg" ClientIDMode="Static">
         <h2 style="text-align:center"   class="form-signin-heading" > Update Test Results</h2>
-   <center><asp:Table id="tbltestdetails" runat="server" CssClass="doc_reg">
+   <center><asp:Table id="tbltestdetails" runat="server" CssClass="doc_reg" >
            <%-- <asp:TableRow>
                 <asp:TableCell>
                    <asp:Label runat="server" for="txtReportid">ReportId</asp:Label>        
@@ -16,7 +17,7 @@
             <asp:Label runat="server" for="txtpatientid">PatientId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtpatientid" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:DropDownList ID="ddlpatient" runat="server" CssClass="form-control"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
              <asp:TableRow>
@@ -24,7 +25,7 @@
             <asp:Label runat="server" for="txtdoctorid">DoctorId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtdoctorid" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                   <asp:DropDownList ID="ddldoctor" runat="server" CssClass="form-control"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
          <asp:TableRow>
@@ -32,7 +33,7 @@
             <asp:Label runat="server" for="txtmedicareservice">MedicareServiceId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtmedicareservice" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                     <asp:DropDownList ID="ddlmedicareservices" runat="server" CssClass="form-control"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
         <asp:TableRow>
@@ -40,7 +41,7 @@
             <asp:Label runat="server" for="txtagentid">AgentId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" ID="txtagentid" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                  <asp:DropDownList ID="ddlagent" runat="server" CssClass="form-control"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
         <asp:TableRow>

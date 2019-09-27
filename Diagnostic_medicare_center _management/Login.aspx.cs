@@ -23,106 +23,134 @@ namespace Diagnostic_medicare_center__management
             Session["txtUserName"] = txtUserName.Text;
             Session["txtpassword"] = txtpassword.Text;
             lblindex.Text = "";
-            if (ddlRoleList.SelectedValue.ToString() == "Admin")
+            if (ddlRoleList.SelectedValue.ToString() == "s_admin")
             {
-                int count = 0;
-                AdminDetailsSql adminDetailsSql = new AdminDetailsSql();
-                List<AdminDetails> adminDetails = adminDetailsSql.DisplayAdminDetails();
-             foreach (var admin in adminDetails)
+                if((txtUserName.Text=="vinay")&&(txtpassword.Text=="123456789"))
                 {
-                    if ((admin.UserName1 == txtUserName.Text) && (admin.Password1 == txtpassword.Text))
-                    {
-
-                        count++;
-                    }
-
-                }
-                if (count == 1)
-                {
-                    lblMsg.Text = "Login successfull";
-                    Response.Redirect("~/Admin.aspx");
+                    Response.Redirect("~/ApproveAdmin.aspx");
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
-                    //lblMsg.Text = "Invalid username or password";
+                    lblMsg.Text = "Invalid Username/password ";
                 }
+
+                //var UserList = adminDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
+                //if (UserList.Count > 0)
+                //{
+                //    if (UserList[0].Isapproved1 != true)
+                //    {
+                //        lblMsg.Text = "Your Account is Pending for Admin Approval";
+                //    }
+                //    else
+                //    {
+                //        lblMsg.Text = "Login successfull";
+                //        Response.Redirect("~/ApproveAdmin.aspx");
+                //    }
+                //}
+                //else
+                //{
+                //    lblMsg.Text = "Incorrect UserId/Password";
+                //}
+
+
+            }
+            else if (ddlRoleList.SelectedValue.ToString() == "Admin")
+            {
                 
+                AdminDetailsSql adminDetailsSql = new AdminDetailsSql();
+                List<AdminDetails> adminDetails = adminDetailsSql.DisplayAdminDetails();
+                var UserList= adminDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
+                if(UserList.Count>0)
+                {
+                    if(UserList[0].Isapproved1!=true)
+                    {
+                        lblMsg.Text = "Your Account is Pending for Admin Approval";
+                    }
+                    else
+                    {
+                        lblMsg.Text = "Login successfull";
+                        Response.Redirect("~/Admin.aspx");
+                    }
+                }
+                else
+                {
+                    lblMsg.Text = "Incorrect UserId/Password";
+                }
+
+               
             }
            else if (ddlRoleList.SelectedValue == "Doctor")
             {
                
-                int count = 0;
+                
                 DoctorDetailsSql doctorDetailsSql = new DoctorDetailsSql();
                 List<DoctorDetails> doctorDetails = doctorDetailsSql.DisplayDoctorDetails();
-                foreach (var doctor in doctorDetails)
+                var UserList = doctorDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
+                if (UserList.Count > 0)
                 {
-                    if ((doctor.UserName1 == txtUserName.Text) && (doctor.Password1 == txtpassword.Text))
+                    if (UserList[0].Isapproved1 != true)
                     {
-
-                        count++;
+                        lblMsg.Text = "Your Account is Pending for Admin Approval";
                     }
-
-                }
-                if (count == 1)
-                {
-                    lblMsg.Text = "Login successfull";
-                    Response.Redirect("~/Doctor.aspx");
+                    else
+                    {
+                        lblMsg.Text = "Login successfull";
+                        Response.Redirect("~/Doctor.aspx");
+                    }
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
-                    lblMsg.Text = "Invalid username or password";
+                    lblMsg.Text = "Incorrect UserId/Password";
                 }
 
             }
             else if (ddlRoleList.SelectedValue == "Patient")
             {
-                int count = 0;
+                
                 PatientDetailsSql patientDetailsSql = new PatientDetailsSql();
                 List<PatientDetails> patientDetails = patientDetailsSql.DisplayPatientDetails();
-                foreach (var patient in patientDetails)
+                var UserList = patientDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
+                if (UserList.Count > 0)
                 {
-                    if ((patient.UserName1 == txtUserName.Text) && (patient.Password1 == txtpassword.Text))
+                    if (UserList[0].Isapproved1 != true)
                     {
-
-                        count++;
+                        lblMsg.Text = "Your Account is Pending for Admin Approval";
                     }
-
-                }
-                if (count == 1)
-                {
-                    lblMsg.Text = "Login successfull";
-                    Response.Redirect("~/Patient.aspx");
+                    else
+                    {
+                        lblMsg.Text = "Login successfull";
+                        Response.Redirect("~/Patient.aspx");
+                    }
                 }
                 else
                 {
-                    lblMsg.Text = "Invalid username or password";
+                    lblMsg.Text = "Incorrect UserId/Password";
                 }
+
 
             }
             else if (ddlRoleList.SelectedValue == "Agent")
             {
-                int count = 0;
+                
                 AgentDetailsSql agentDetailsSql = new AgentDetailsSql();
                 List<AgentDetails> agentDetails = agentDetailsSql.DisplayAgentDetails();
-                foreach (var agent in agentDetails)
+                var UserList = agentDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
+                if (UserList.Count > 0)
                 {
-                    if ((agent.UserName1 == txtUserName.Text) && (agent.Password1 == txtpassword.Text))
+                    if (UserList[0].Isapproved1 != true)
                     {
-
-                        count++;
+                        lblMsg.Text = "Your Account is Pending for Admin Approval";
                     }
+                    else
+                    {
+                        lblMsg.Text = "Login successfull";
+                        Response.Redirect("~/Agent.aspx");
 
-                }
-                if (count == 1)
-                {
-                    lblMsg.Text = "Login successfull";
-                    Response.Redirect("~/Agent.aspx");
+                    }
                 }
                 else
                 {
-                    lblMsg.Text = "Invalid username or password";
+                    lblMsg.Text = "Incorrect UserId/Password";
                 }
 
             }

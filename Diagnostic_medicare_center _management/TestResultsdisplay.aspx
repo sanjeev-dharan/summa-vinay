@@ -1,18 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestResultsdisplay.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayTestResults" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
-        <asp:Label runat="server" ID="headStatus" CssClass="titleStatus"></asp:Label>
-    <div id="displayTestResult" runat="server" class="testresult1"  >
+      <style>
+        div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+    </style>
 
-        <asp:GridView runat="server" ID="gdvTestresults" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%">
+        <asp:Label runat="server" ID="headStatus" CssClass="titleStatus"></asp:Label>
+    <div id="displayTestResult" runat="server" class="testresult1 scrollmenu"  >
+
+        <asp:GridView runat="server" ID="gdvTestresults" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%" class="table table-responsive">
      
 
         <Columns>
-            <asp:TemplateField HeaderText="ReportId">
+           <%-- <asp:TemplateField HeaderText="ReportId">
                 <ItemTemplate>
                     <asp:Label ID="lblReportId" runat="server" Text='<%# Eval("ReportId") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
             <asp:TemplateField HeaderText="PatientId">
                 <ItemTemplate>
                     <asp:Label ID="lblPatientId" runat="server" Text='<%# Eval("PatientId1") %>'></asp:Label>
@@ -39,11 +47,11 @@
                     <asp:Label ID="lblservicedate" runat="server" Text='<%# Eval("Servicedate") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="LastName">
+            <%--<asp:TemplateField HeaderText="LastName">
                     <ItemTemplate>
-                        <asp:Label ID="lblAgentlastName" runat="server" Text='<%# Eval("LastName1") %>'></asp:Label>
+                        <asp:Label ID="lblAgentlastName" runat="server" Text='<%# Eval("LastName") %>'></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
             <asp:TemplateField HeaderText=" Testresultdate" Visible="false">
                 <ItemTemplate>
                     <asp:Label ID="lbltestresultdate" runat="server" Text='<%# Eval("Testresultdate") %>'></asp:Label>

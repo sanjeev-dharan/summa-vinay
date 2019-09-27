@@ -200,6 +200,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Agent.aspx" />
+    <Content Include="ApproveAdmin.aspx" />
     <Content Include="ApproveUsers.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -412,6 +413,13 @@
     </Compile>
     <Compile Include="Agent.aspx.designer.cs">
       <DependentUpon>Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveAdmin.aspx.cs">
+      <DependentUpon>ApproveAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveAdmin.aspx.designer.cs">
+      <DependentUpon>ApproveAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ApproveUsers.aspx.cs">
       <DependentUpon>ApproveUsers.aspx</DependentUpon>

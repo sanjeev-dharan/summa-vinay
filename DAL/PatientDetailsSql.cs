@@ -43,9 +43,10 @@ namespace DAL
                          _dataRow["AddressLine2"].ToString(),
                          _dataRow["City"].ToString(),
                          _dataRow["State"].ToString(),
-                         int.Parse(_dataRow["Zipcode"].ToString())                         
-                        //_dataRow["Isapproved"].ToString() == "Yes" ? true : false,
-                        //DateTime.Parse(_dataRow["Isapproved_On"].ToString())
+                         int.Parse(_dataRow["Zipcode"].ToString()),
+                           _dataRow["Isapproved"].ToString().Equals("True") ? true : false,
+                            DateTime.Parse(_dataRow["Isapproved_on"].ToString())
+
 
                         ));
                 }

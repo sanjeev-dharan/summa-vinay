@@ -48,10 +48,11 @@ namespace DAL
                          _dataRow["Specialty"].ToString(),
                          int.Parse(_dataRow["Workhours"].ToString()),
                          _dataRow["HospitalName"].ToString(),
-                          int.Parse(_dataRow["MedicareServiceID"].ToString())
+                          int.Parse(_dataRow["MedicareServiceID"].ToString()),
+                            _dataRow["Isapproved"].ToString().Equals("True") ? true : false,
+                            DateTime.Parse(_dataRow["Isapproved_on"].ToString())
 
-                        //_dataRow["Isapproved"].ToString() == "Yes" ? true : false,
-                        //DateTime.Parse(_dataRow["Isapproved_On"].ToString())
+
 
                         ));
                 }

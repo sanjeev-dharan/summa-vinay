@@ -14,6 +14,13 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="Content/Site.css" rel="stylesheet" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .headermsg
+        {
+            font-size:32px !important;
+            color:white !important;
+        }
+    </style>
    <script>
 
         function select_Role()
@@ -126,14 +133,31 @@
                         </LoggedInTemplate>
                     </asp:LoginView>--%>
                     <%try
-                        {
-                         
-                            if ((Session["ddlRoleList"]!= null)&&(Session["txtUserName"]!="")&&(Session["txtpassword"]!="")) 
+    {
 
-                            { 
-                                switch (Session["ddlRoleList"].ToString())
-                                {
-                                    case "Admin":
+        if ((Session["ddlRoleList"] != null) && (Session["txtUserName"] != "") && (Session["txtpassword"] != ""))
+
+        {
+            switch (Session["ddlRoleList"].ToString())
+            {
+                                    case "s_admin":
+                                         %>
+                                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                        <AnonymousTemplate>
+                                            <ul class="nav navbar-nav navbar-right">
+                                                 
+
+                                              
+                                                <li><asp:LinkButton runat="server" ID="lblLogout" Text="Logout" OnClick="lblLogout_Click"></asp:LinkButton></li>
+                                            </ul>
+                                            
+                                        </AnonymousTemplate>                                        
+                                    </asp:LoginView>
+                    <% break;
+                                       
+
+                        
+                case "Admin":
                     %>
                                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                                         <AnonymousTemplate>
@@ -149,7 +173,7 @@
                                         </AnonymousTemplate>                                        
                                     </asp:LoginView>
                     <% break;
-                        case "Doctor":
+    case "Doctor":
                     %>
 
                                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -166,7 +190,7 @@
                                         </AnonymousTemplate>                                        
                                     </asp:LoginView>
                     <%     break;
-                                         case "Patient":
+    case "Patient":
                     %>
 
                                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -183,7 +207,7 @@
                                         </AnonymousTemplate>                                        
                                     </asp:LoginView>
                     <%     break;
-                                         case "Agent":
+    case "Agent":
                     %>
 
                                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -202,6 +226,8 @@
                     <%     break;
                                 }
                             }
+                            
+
                         }
                         catch
                         {

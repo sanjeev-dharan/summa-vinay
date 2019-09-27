@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AdminDetails.cs" />
     <Compile Include="AgentDetails.cs" />
+    <Compile Include="Appointment.cs" />
     <Compile Include="DoctorDetails.cs" />
     <Compile Include="MedicareServices.cs" />
     <Compile Include="PatientDetails.cs" />

@@ -24,6 +24,8 @@ namespace Models
         string City;
         string State;
         int Zipcode;
+        bool Isapproved;
+        DateTime Isapprovedon; 
 
 
         public int Patientid1
@@ -236,13 +238,39 @@ namespace Models
             }
         }
 
+        public bool Isapproved1
+        {
+            get
+            {
+                return Isapproved;
+            }
+
+            set
+            {
+                Isapproved = value;
+            }
+        }
+
+        public DateTime Isapprovedon1
+        {
+            get
+            {
+                return Isapprovedon;
+            }
+
+            set
+            {
+                Isapprovedon = value;
+            }
+        }
+
         public PatientDetails()
         {
 
         }
         public PatientDetails(int Patientid, string FirstName, string LastName, int Age, string Gender, string DoB, double ContactNumber,
         double AltContactNumber, string EmailId, string UserName, string Password, string AddressLine1, string AddressLine2, string City, string State,
-        int Zipcode)
+        int Zipcode,bool Isapproved,DateTime Isapprovedon)
         {
             this.Patientid = Patientid;
             this.FirstName = FirstName;
@@ -259,6 +287,8 @@ namespace Models
             this.City = City;
             this.State = State;
             this.Zipcode = Zipcode;
+            this.Isapproved = Isapproved;
+            this.Isapprovedon = Isapprovedon;
        
 
 

@@ -11,6 +11,7 @@ namespace DAL
 {
   public  class Testresultsql : ITestResults
     {
+        
         public void AddTestResults(TestResultdetails testresultdetails)
         {
             
@@ -96,6 +97,19 @@ namespace DAL
             {
                 return new List<TestResultdetails>();
             }
+        }
+
+        public DataSet Getalldata()
+        {
+            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand _sqlCommand = new SqlCommand("getalldata", _sqlConnection);
+            _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            _sqlCommand.Connection = _sqlConnection;
+            SqlDataAdapter _sqldataadapter = new SqlDataAdapter(_sqlCommand);
+            DataSet ds = new DataSet();
+            _sqldataadapter.Fill(ds);
+            return ds;
         }
 
         public void ModifyTestResults(TestResultdetails testresultdetails)

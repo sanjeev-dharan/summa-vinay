@@ -19,7 +19,9 @@ namespace Models
         string EmailId;
         string UserName;
         string Password;
-   
+        bool Isapproved;
+        DateTime Isapprovedon;
+
 
         public int AdminId1
         {
@@ -165,14 +167,37 @@ namespace Models
             }
         }
 
-       
-        
+        public bool Isapproved1
+        {
+            get
+            {
+                return Isapproved;
+            }
+
+            set
+            {
+                Isapproved = value;
+            }
+        }
+
+        public DateTime Isapprovedon1
+        {
+            get
+            {
+                return Isapprovedon;
+            }
+
+            set
+            {
+                Isapprovedon = value;
+            }
+        }
 
         public AdminDetails()
         {
 
         }
-        public AdminDetails(int AdminId, string FirstName, string LastName, int Age, string Gender, string DoB, double ContactNumber, double AltContactNumber, string EmailId,string UserName, string Password)
+        public AdminDetails(int AdminId, string FirstName, string LastName, int Age, string Gender, string DoB, double ContactNumber, double AltContactNumber, string EmailId,string UserName, string Password,bool Isapproved,DateTime Isapprovedon  )
         {
             this.AdminId = AdminId;
             this.FirstName = FirstName;
@@ -185,6 +210,9 @@ namespace Models
             this.EmailId = EmailId;
             this.UserName = UserName;
             this.Password = Password;
+            this.Isapproved = Isapproved;
+            this.Isapprovedon = Isapprovedon;
+     
           
 
         }

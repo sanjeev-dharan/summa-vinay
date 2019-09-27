@@ -29,7 +29,9 @@ namespace Models
         int Workhours;
         string HospitalName;
         int MedicareServiceID;
-       
+        bool Isapproved;
+        DateTime Isapprovedon;
+
 
         public int DoctorID1
         {
@@ -306,13 +308,39 @@ namespace Models
             }
         }
 
+        public bool Isapproved1
+        {
+            get
+            {
+                return Isapproved;
+            }
+
+            set
+            {
+                Isapproved = value;
+            }
+        }
+
+        public DateTime Isapprovedon1
+        {
+            get
+            {
+                return Isapprovedon;
+            }
+
+            set
+            {
+                Isapprovedon = value;
+            }
+        }
+
         public DoctorDetails()
         {
 
         }
         public DoctorDetails(int DoctorID,string FirstName,string LastName,int Age,string Gender,string DoB,double ContactNumber,
         double AltContactNumber,string EmailID, string UserName,string Password,string AddressLine1,string AddressLine2,string City,string State,
-        int Zipcode,string Degree,string Specialty,int Workhours,string HospitalName,int MedicareServiceID)
+        int Zipcode,string Degree,string Specialty,int Workhours,string HospitalName,int MedicareServiceID,bool Isapproved,DateTime Isapprovedon)
         {
             this.DoctorID = DoctorID;
             this.FirstName = FirstName;
@@ -334,7 +362,8 @@ namespace Models
             this.Workhours = Workhours;
             this.HospitalName = HospitalName;
             this.MedicareServiceID = MedicareServiceID;
-          
+            this.Isapproved = Isapproved;
+            this.Isapprovedon = Isapprovedon;
 
         }
 
