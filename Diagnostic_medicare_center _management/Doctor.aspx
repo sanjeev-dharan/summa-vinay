@@ -1,8 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Doctor.aspx.cs" Inherits="Diagnostic_medicare_center__management.Doctor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-  <asp:GridView runat="server" ID="gdvappointment">
+    <center>
+        <asp:Label runat="server" ID="lblMsgDoctor" style="font-size:32px; color:white !important"></asp:Label>
+    </center>
+  <asp:GridView runat="server" ID="gdvappointment" AutoGenerateColumns="false" style="background-color:white;color:darkblue;" 
+        CssClass="table table-responsive" OnRowCommand="gdvappointment_RowCommand">
       <AlternatingRowStyle BackColor="White" />
             <Columns>
+                 <asp:TemplateField HeaderText="Doctorid" >
+                    <ItemTemplate>
+                        <asp:Label ID="lbldoctorid" runat="server" Text='<%# Eval("doctorid") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="AppointmentDate" >
                     <ItemTemplate>
                         <asp:Label ID="lblAppointmentDate" runat="server" Text='<%# Eval("appointmentdate") %>'></asp:Label>

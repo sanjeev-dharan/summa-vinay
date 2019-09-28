@@ -61,7 +61,7 @@ namespace Diagnostic_medicare_center__management
                 List<AdminDetails> adminDetails = adminDetailsSql.DisplayAdminDetails();
                 var UserList= adminDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
                 if(UserList.Count>0)
-                {
+                {                   
                     if(UserList[0].Isapproved1!=true)
                     {
                         lblMsg.Text = "Your Account is Pending for Admin Approval";
@@ -88,6 +88,7 @@ namespace Diagnostic_medicare_center__management
                 var UserList = doctorDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
                 if (UserList.Count > 0)
                 {
+                    Session["DoctorId"] = UserList[0].DoctorID1;
                     if (UserList[0].Isapproved1 != true)
                     {
                         lblMsg.Text = "Your Account is Pending for Admin Approval";
@@ -112,6 +113,7 @@ namespace Diagnostic_medicare_center__management
                 var UserList = patientDetails.Where(x => x.UserName1 == txtUserName.Text && x.Password1 == txtpassword.Text).ToList();
                 if (UserList.Count > 0)
                 {
+                    Session["Patientid"] = UserList[0].Patientid1;
                     if (UserList[0].Isapproved1 != true)
                     {
                         lblMsg.Text = "Your Account is Pending for Admin Approval";

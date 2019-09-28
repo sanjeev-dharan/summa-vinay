@@ -14,6 +14,7 @@ namespace DAL
         List<TestResultdetails> DisplayTestResults();
         void ModifyTestResults(TestResultdetails testresultdetails);
         DataSet Getalldata();
+        DataTable gettestdetails(int id);
       
     }
 }

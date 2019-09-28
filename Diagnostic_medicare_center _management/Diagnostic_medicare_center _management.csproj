@@ -280,6 +280,7 @@
     <Content Include="servicesForm.aspx" />
     <Content Include="Site.Master" />
     <Content Include="testdetails.aspx" />
+    <Content Include="Testresultspatient.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -577,6 +578,13 @@
     </Compile>
     <Compile Include="testdetails.aspx.designer.cs">
       <DependentUpon>testdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testresultspatient.aspx.cs">
+      <DependentUpon>Testresultspatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testresultspatient.aspx.designer.cs">
+      <DependentUpon>Testresultspatient.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

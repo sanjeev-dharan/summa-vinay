@@ -53,6 +53,7 @@ namespace DAL
             _sqlCommand.CommandType = CommandType.Text;
             _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Connection = _sqlConnection;
+            _sqlConnection.Open();
             SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
             DataTable _dataTable = new DataTable();
             _sqlDataAdapter.Fill(_dataTable);
@@ -108,6 +109,20 @@ namespace DAL
             _sqlCommand.Connection = _sqlConnection;
             SqlDataAdapter _sqldataadapter = new SqlDataAdapter(_sqlCommand);
             DataSet ds = new DataSet();
+            _sqldataadapter.Fill(ds);
+            return ds;
+        }
+
+        public DataTable gettestdetails(int id)
+        {
+            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand _sqlCommand = new SqlCommand("gettestresultspatient", _sqlConnection);
+            _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            _sqlCommand.Connection = _sqlConnection;
+            _sqlCommand.Parameters.AddWithValue("@patientid",id);
+            SqlDataAdapter _sqldataadapter = new SqlDataAdapter(_sqlCommand);
+            DataTable ds = new DataTable();
             _sqldataadapter.Fill(ds);
             return ds;
         }

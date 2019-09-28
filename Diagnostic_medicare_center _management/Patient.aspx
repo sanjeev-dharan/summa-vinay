@@ -9,7 +9,7 @@
   <asp:Label runat="server" ID="txtappointment" >Select Appointment Date</asp:Label>
            </asp:TableCell>
            <asp:TableCell>
-<asp:TextBox runat="server" ID="txtappoint"  TextMode="Date" ></asp:TextBox>
+<asp:TextBox runat="server" ID="txtappoint" CssClass="form-control"  TextMode="Date" ClientIDMode="Static"></asp:TextBox>
            </asp:TableCell>
        </asp:TableRow>
          <asp:TableRow>
@@ -17,7 +17,7 @@
             <asp:Label runat="server" for="txtdoctorid">DoctorId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                   <asp:DropDownList ID="ddldoctor" runat="server" CssClass="form-control"></asp:DropDownList>
+                   <asp:DropDownList ID="ddldoctor" runat="server" CssClass="form-control" ClientIDMode="Static" ></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
          <asp:TableRow>
@@ -25,16 +25,17 @@
             <asp:Label runat="server" for="txtmedicareservice">MedicareServiceId</asp:Label>        
              </asp:TableCell>
                 <asp:TableCell>
-                     <asp:DropDownList ID="ddlmedicareservices" runat="server" CssClass="form-control"></asp:DropDownList>
+                     <asp:DropDownList ID="ddlmedicareservices" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
        <asp:TableRow>
            
            <asp:TableCell ColumnSpan="2">
                <center>
-                <asp:Button ID="btnsubmit" runat="server" Text="BookAppointment" OnClick="btnsubmit_Click"/>
+                  <asp:Button ID="btnsubmit" CssClass="btn btn-lg btn-primary" runat="server" Text="BookAppointment" OnClick="btnsubmit_Click"  OnClientClick="return Appointment_validate()" ClientIDMode="Static"/>
                </center></asp:TableCell>
        </asp:TableRow>
+     
       
 
 

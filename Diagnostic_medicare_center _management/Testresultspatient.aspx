@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestResultsdisplay.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayTestResults" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
-      <style>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Testresultspatient.aspx.cs" Inherits="Diagnostic_medicare_center__management.Testresultspatient" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <style>
         div.scrollmenu {
   background-color: #333;
   overflow: auto;
@@ -14,7 +13,7 @@
         <asp:Label runat="server" ID="headStatus" CssClass="titleStatus"></asp:Label>
     <div id="displayTestResult" runat="server" class="testresult1 scrollmenu"  >
         <br />
-        <asp:GridView runat="server" ID="gdvTestresults" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%" class="table table-responsive">
+        <asp:GridView runat="server" ID="gdvTestresultspatient" AutoGenerateColumns="False"  BorderStyle="None" GridLines="None" Height="100%" Width="100%" class="table table-responsive">
      
 
         <Columns>
@@ -25,7 +24,7 @@
             </asp:TemplateField>--%>
             <asp:TemplateField HeaderText="PatientId">
                 <ItemTemplate>
-                    <asp:Label ID="lblPatientId" runat="server" Text='<%# Eval("PatientId1") %>'></asp:Label>
+                    <asp:Label ID="lblPatientId" runat="server" Text='<%# Eval("PatientId") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="doctorid">
@@ -150,5 +149,4 @@
     <br />
     <br />
     <center> <asp:Label runat="server" ID="lblStatusAgent"  CssClass="delmessage"></asp:Label></center>
-
 </asp:Content>

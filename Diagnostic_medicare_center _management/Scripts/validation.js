@@ -923,4 +923,185 @@ function service_validate()
 
 }
 //--------------------testResult_Validation-------------------------
+function testResult_Validation()
+{
+    var patient = document.getElementById("ddlpatient").value;
+    var doctor = document.getElementById("ddldoctor").value;
+    var MediService = document.getElementById("ddlmedicareservices").value;
+    var agent = document.getElementById("ddlagent").value;
+    var Serdate = document.getElementById("txtservicedate").value;
+    var Resdate = document.getElementById("txttestresultdate").value;
+    var dia1N = document.getElementById("txtdiag1_normal_value").value;
+    var dia1A = document.getElementById("txtdiag1_actual_value").value;
+    var dia2N = document.getElementById("txtdiag2_normal_value").value;
+    var dia2A = document.getElementById("txtdiag2_actual_value").value;
+    var dia3N = document.getElementById("txtdiag3_normal_value").value;
+    var dia3A = document.getElementById("txtdiag3_actual_value").value;
+    var dia4N = document.getElementById("txtdiag4_normal_value").value;
+    var dia4A = document.getElementById("txtdiag4_actual_value").value;
+    var dia5N = document.getElementById("txtdiag5_normal_value").value;
+    var dia5A = document.getElementById("txtdiag5_actual_value").value;
+    var dia6N = document.getElementById("txtdiag6_normal_value").value;
+    var dia6A = document.getElementById("txtdiag6_actual_value").value;
 
+    if (patient == "") {
+        alert("Please update the highlighted mandatory patientID field(s)");
+        document.getElementById("ddlpatient").style.borderColor = "#FF0000";
+        document.getElementById("ddlpatient").focus();
+
+        return false;
+    }
+    else if(doctor=="")
+    {
+        alert("Please update the highlighted mandatory doctorID field(s)");
+        document.getElementById("ddldoctor").style.borderColor = "#FF0000";
+        document.getElementById("ddldoctor").focus();
+
+        return false;
+    }
+    else if (MediService == "") {
+        alert("Please update the highlighted mandatory MEdicareServiceID field(s)");
+        document.getElementById("ddlmedicareservices").style.borderColor = "#FF0000";
+        document.getElementById("ddlmedicareservices").focus();
+
+        return false;
+    }
+    else if (agent == "") {
+        alert("Please update the highlighted mandatory agent ID field(s)");
+        document.getElementById("ddlagent").style.borderColor = "#FF0000";
+        document.getElementById("ddlagent").focus();
+
+        return false;
+    }
+    else if (Serdate == "") {
+        alert("Please update the highlighted mandatory Service Date field(s)");
+        document.getElementById("txtservicedate").style.borderColor = "#FF0000";
+        document.getElementById("txtservicedate").focus();
+
+        return false;
+    }
+    else if (Resdate == "") {
+        alert("Please update the highlighted mandatory MEdicareServiceID field(s)");
+        document.getElementById("txttestresultdate").style.borderColor = "#FF0000";
+        document.getElementById("txttestresultdate").focus();
+
+        return false;
+    }
+    else if (dia1N == "") {
+        alert("Please update the highlighted mandatory Diag1_normal Value field(s)");
+        document.getElementById("txtdiag1_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag1_normal_value").focus();
+
+        return false;
+    }
+    else if (dia1A == "") {
+        alert("Please update the highlighted mandatory Diag1_normal value field(s)");
+        document.getElementById("txtdiag1_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag1_actual_value").focus();
+
+        return false;
+    }
+    else if (dia2N == "") {
+        alert("Please update the highlighted mandatory Diag2_normal Value field(s)");
+        document.getElementById("txtdiag2_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag2_normal_value").focus();
+
+        return false;
+    }
+    else if (dia2A == "") {
+        alert("Please update the highlighted mandatory Diag2_Actual Value field(s)");
+        document.getElementById("txtdiag2_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag2_actual_value").focus();
+
+        return false;
+    }
+    else if (dia3N == "") {
+        alert("Please update the highlighted mandatory Diag3_normal Value field(s)");
+        document.getElementById("txtdiag3_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag3_normal_value").focus();
+
+        return false;
+    }
+    else if (dia3A == "") {
+        alert("Please update the highlighted mandatory Diag3_Actual Value field(s)");
+        document.getElementById("txtdiag3_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag3_actual_value").focus();
+
+        return false;
+    }
+    else if (dia4N == "") {
+        alert("Please update the highlighted mandatory Diag4_normal Value field(s)");
+        document.getElementById("txtdiag4_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag4_normal_value").focus();
+
+        return false;
+    }
+    else if (dia4A == "") {
+        alert("Please update the highlighted mandatory Diag4_Actual Value field(s)");
+        document.getElementById("txtdiag4_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag4_actual_value").focus();
+
+        return false;
+    }
+    else if (dia5N == "") {
+        alert("Please update the highlighted mandatory Diag5_normal Value field(s)");
+        document.getElementById("txtdiag5_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag5_normal_value").focus();
+
+        return false;
+    }
+    else if (dia5A == "") {
+        alert("Please update the highlighted mandatory Diag5_Actual Value field(s)");
+        document.getElementById("txtdiag5_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag5_actual_value").focus();
+
+        return false;
+    }
+    else if (dia6N == "") {
+        alert("Please update the highlighted mandatory Diag6_normal Value field(s)");
+        document.getElementById("txtdiag6_normal_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag6_normal_value").focus();
+
+        return false;
+    }
+    else if (dia6A == "") {
+        alert("Please update the highlighted mandatory Diag6_Actual Value field(s)");
+        document.getElementById("txtdiag6_actual_value").style.borderColor = "#FF0000";
+        document.getElementById("txtdiag6_actual_value").focus();
+
+        return false;
+    }
+        
+
+}
+
+//-----------------------Appointment Booking---------------------
+
+function Appointment_validate()
+{
+    var appoint = document.getElementById("txtappoint").value;
+    var Doctorbook = document.getElementById("ddldoctor").value;
+    var MediServicebook = document.getElementById("ddlmedicareservices").value;
+
+    if (appoint == "") {
+        alert("Please update the highlighted mandatory patientID field(s)");
+        document.getElementById("txtappoint").style.borderColor = "#FF0000";
+        document.getElementById("txtappoint").focus();
+
+        return false;
+    }
+    else if (Doctorbook == "") {
+        alert("Please update the highlighted mandatory doctorID field(s)");
+        document.getElementById("ddldoctor").style.borderColor = "#FF0000";
+        document.getElementById("ddldoctor").focus();
+
+        return false;
+    }
+    else if (MediServicebook == "") {
+        alert("Please update the highlighted mandatory MEdicareServiceID field(s)");
+        document.getElementById("ddlmedicareservices").style.borderColor = "#FF0000";
+        document.getElementById("ddlmedicareservices").focus();
+
+        return false;
+    }
+}

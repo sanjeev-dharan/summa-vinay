@@ -13,6 +13,15 @@ namespace Diagnostic_medicare_center__management {
     public partial class Selecttest {
         
         /// <summary>
+        /// headSelectTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label headSelectTest;
+        
+        /// <summary>
         /// btnviewresults control.
         /// </summary>
         /// <remarks>

@@ -5,8 +5,8 @@
     <asp:Label runat="server" ID="headStatusdoctor" CssClass="titleStatus"></asp:Label>
     <br />
     <br />
-     <asp:GridView runat="server" ID="gdvDoctorDetails"
-             AutoGenerateColumns="False" OnRowDeleting="gdvDoctorDetails_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None">
+     <asp:GridView  runat="server" ID="gdvDoctorDetails"
+             AutoGenerateColumns="False" OnRowDeleting="gdvDoctorDetails_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField HeaderText="ID" Visible="false" >
@@ -115,7 +115,7 @@
                     </ItemTemplate>
                 </asp:TemplateField> 
                          
-                <asp:CommandField ButtonType="Link" ShowDeleteButton="true" HeaderText="Action"/>
+                <asp:CommandField ItemStyle-ForeColor="skyblue"  ButtonType="Link" ShowDeleteButton="true" HeaderText="Action"/>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

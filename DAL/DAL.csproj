@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdminDetailsSql.cs" />
     <Compile Include="AgentDetailsSql.cs" />
+    <Compile Include="AppointmentSql.cs" />
     <Compile Include="ConnectionHandler.cs" />
     <Compile Include="DoctorDetailsSql.cs" />
     <Compile Include="IAdminDetails.cs" />

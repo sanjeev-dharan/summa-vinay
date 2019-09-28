@@ -10,51 +10,42 @@
 namespace Diagnostic_medicare_center__management {
     
     
-    public partial class DisplayMedicareServices1 {
+    public partial class Testresultspatient {
         
         /// <summary>
-        /// headStatusservices control.
+        /// headStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label headStatusservices;
+        protected global::System.Web.UI.WebControls.Label headStatus;
         
         /// <summary>
-        /// MserviceDetails control.
+        /// displayTestResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MserviceDetails;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayTestResult;
         
         /// <summary>
-        /// addMediServiceStyle control.
+        /// gdvTestresultspatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addMediServiceStyle;
+        protected global::System.Web.UI.WebControls.GridView gdvTestresultspatient;
         
         /// <summary>
-        /// addservices control.
+        /// lblStatusAgent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink addservices;
-        
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Label lblStatusAgent;
     }
 }

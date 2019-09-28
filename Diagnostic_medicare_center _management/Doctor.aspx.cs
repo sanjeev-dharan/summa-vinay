@@ -15,42 +15,76 @@ namespace Diagnostic_medicare_center__management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getappointment();
-        }
-        public List<Appointment> getappointment()
-        {
-            SqlConnection _sqlConnection = ConnectionHandler.GetConnection();
-            SqlCommand _sqlCommand = new SqlCommand("getappointments", _sqlConnection);
-            _sqlCommand.CommandType = CommandType.Text;
-            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            _sqlCommand.Connection = _sqlConnection;
-            _sqlCommand.Parameters.AddWithValue("@doctorid",4);
-            SqlDataAdapter _sqlDataAdapter = new SqlDataAdapter(_sqlCommand);
-
-            DataTable _dataTable = new DataTable();
-            _sqlDataAdapter.Fill(_dataTable);
-            List<Appointment> appointment = new List<Appointment>();
-            if (_dataTable.Rows.Count > 0)
+            if (!IsPostBack)
             {
-                foreach (DataRow _dataRow in _dataTable.Rows)
+                getappointment();
+            }
+        }
+        public void getappointment()
+        {
+            try
+            {
+                DataTable dt = new AppointmentSql().GetPendingAppointments(int.Parse(Session["DoctorId"].ToString()));
+                if (dt.Rows.Count > 0)
+                    gdvappointment.DataSource = dt;
+                gdvappointment.DataBind();
+            }
+            catch { }
+        }
+
+        public bool ApproveAppointment(int id,  string type)
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "ApproveAppointment";
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            sqlCommand.Parameters.AddWithValue("@type", type);
+            SqlDataAdapter sqlDataAdaper = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sqlDataAdaper.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                if (!dt.Rows[0][0].ToString().Contains("Fail"))
                 {
-                    appointment.Add(new Appointment
-                        (
-                         _dataRow["Appointmentdate"].ToString(),
-                        int.Parse(_dataRow["Medicareserviceid"].ToString()),                                         
-                        _dataRow["Isapproved"].ToString().Equals("True") ? true : false
-                  )
-
-
-
-                        );
+                    return true;
                 }
-                return appointment;
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                return new List<Appointment>();
+                return false;
             }
         }
+
+        protected void gdvappointment_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            GridViewRow row = gdvappointment.Rows[int.Parse(e.CommandArgument.ToString())];
+            int _Id = int.Parse((row.FindControl("lbldoctorid") as Label).Text);
+            string type = e.CommandName;
+            bool Result = ApproveAppointment(_Id, type);
+            if (Result)
+            {
+                if (type == "approve")
+                {
+                    lblMsgDoctor.Text = " Request Approved Successfully!";
+                }
+                else
+                {
+                    lblMsgDoctor.Text = "Request Rejected Successfully";
+                }
+            }
+            else
+            {
+                lblMsgDoctor.Text = "OOPS! Unable to Submit";
+            }
+            getappointment();
+        }
+
     }
 }
+    

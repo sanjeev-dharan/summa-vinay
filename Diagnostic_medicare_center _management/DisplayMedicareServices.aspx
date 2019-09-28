@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DisplayMedicareServices.aspx.cs" Inherits="Diagnostic_medicare_center__management.DisplayMedicareServices1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <center>
-    <asp:Label ID="headStatusservices" runat="server" CssClass="headermsg"></asp:Label>
+    <br/><br/>
+   
+    
+    
+        
+     <center>
+         <asp:Label ID="headStatusservices" runat="server" CssClass="titleStatus"></asp:Label>
+        <br/>
  <asp:GridView runat="server" ID="MserviceDetails"
              AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="MserviceDetails_RowDeleting" OnRowEditing="MserviceDetails_RowEditing" OnRowUpdating="MserviceDetails_RowUpdating">
          <AlternatingRowStyle BackColor="White" />
@@ -26,7 +32,8 @@
                         <asp:Label ID="lblamount" runat="server" Text='<%# Eval("Amount1") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-              <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" HeaderText="Action"/>
+            
+              <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" HeaderText="Action" ControlStyle-ForeColor="DarkBlue" ControlStyle-Font-Underline="true"/>
              </Columns>
          
          <EditRowStyle BackColor="#2461BF" />
@@ -40,8 +47,9 @@
          <SortedDescendingCellStyle BackColor="#E9EBEF" />
          <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-       
-    <asp:HyperLink ID="addservices" runat="server" Text="AddMedicareServices" style="align-content:center" NavigateUrl="~/servicesForm.aspx"></asp:HyperLink>
+        <br/>
+    <asp:Label runat="server" id="addMediServiceStyle">Add Medicare Services </asp:Label>   
+    <asp:HyperLink ID="addservices" runat="server" Text="Click Here!!" style="align-content:center;color:darkblue;font-size:15px" NavigateUrl="~/servicesForm.aspx"  ControlStyle-Font-Underline="true"></asp:HyperLink>
          </center>
     <center> <asp:Label runat="server" ID="lblStatus"  CssClass="delmessage"></asp:Label></center>
 </asp:Content>

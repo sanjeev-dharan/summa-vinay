@@ -321,7 +321,7 @@ namespace Models
         {
            
             this.PatientId = PatientId;
-            this.doctorid = Doctorid;
+            this.Doctorid = doctorid; 
             this.medicareService = medicareService;
             this.agentId = agentId;
             this.servicedate = servicedate;
@@ -329,6 +329,8 @@ namespace Models
             this.Diag1_normal_value = diag1_normal_value;
             this.Diag1_actual_value = diag1_actual_value;
             this.Diag2_normal_value = diag2_normal_value;
+            this.Diag2_actual_value = diag2_actual_value;
+            this.Diag3_normal_value = diag3_normal_value;
             this.Diag3_actual_value = diag3_actual_value;
             this.Diag4_normal_value = diag4_normal_value;
             this.Diag4_actual_value = diag4_actual_value;
