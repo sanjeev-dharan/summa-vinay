@@ -237,6 +237,7 @@
     <Content Include="images\ok.png" />
     <Content Include="images\usericon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="medicare_management.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\logo.jpg" />
     <Content Include="Patient.aspx" />
