@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DAL;
 using Models;
 using System.Data;
+using BAL;
 namespace Diagnostic_medicare_center__management
 {
     public partial class testdetails : System.Web.UI.Page
@@ -46,7 +47,7 @@ namespace Diagnostic_medicare_center__management
         }
         protected void testresultssubmit_Click(object sender, EventArgs e)
         {
-            Testresultsql testresultssql = new Testresultsql();
+            BALAccounts Bal = new BALAccounts();
             
                 TestResultdetails testresultdetails = new TestResultdetails
                 {
@@ -71,8 +72,7 @@ namespace Diagnostic_medicare_center__management
                     Doctor_comments = txtDoctorComments.Text,
                     Otherinfo = txtOtherInformation.Text
                 };
-                testresultssql.AddTestResults(testresultdetails);
-            
+            Bal.addtestresults(testresultdetails);
 
 
         }

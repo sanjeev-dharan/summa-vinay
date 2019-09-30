@@ -40,6 +40,7 @@
 
 
    </asp:Table>
+     <asp:Label runat="server" ID="AppointmentStatus" Style="color:green"></asp:Label>
      
   
    

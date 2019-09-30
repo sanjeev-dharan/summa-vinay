@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using Models;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -18,8 +19,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetMedicareServices()
         {
-            MedicareServicesSql medicareservicesSql = new MedicareServicesSql();
-            List<MedicareServices> medicareservices = medicareservicesSql.DisplayMedicareServices();
+            BALAccounts Bal = new BALAccounts();
+            List<MedicareServices> medicareservices = Bal.displaymedicareservices();
             Mservice.DataSource = medicareservices;
             Mservice.DataBind();
 

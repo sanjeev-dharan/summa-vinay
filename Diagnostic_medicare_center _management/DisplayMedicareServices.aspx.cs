@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -21,8 +22,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetMedicareServices()
         {
-            MedicareServicesSql medicareservicesSql = new MedicareServicesSql();
-            List<MedicareServices> medicareservices = medicareservicesSql.DisplayMedicareServices();
+            BALAccounts Bal = new BALAccounts();  
+            List<MedicareServices> medicareservices = Bal.displaymedicareservices();
             MserviceDetails.DataSource = medicareservices;
             MserviceDetails.DataBind();
             if (medicareservices.Count == 0)
@@ -42,8 +43,8 @@ namespace Diagnostic_medicare_center__management
             GridViewRow row = MserviceDetails.Rows[e.RowIndex];
             string name = (row.FindControl("lblmedicareservice") as Label).Text;
             MedicareServices medicareservices = new MedicareServices();
-            MedicareServicesSql medicareservicessql = new MedicareServicesSql();
-            List<MedicareServices> medservices = medicareservicessql.DisplayMedicareServices();
+            BALAccounts Bal = new BALAccounts();
+            List<MedicareServices> medservices = Bal.displaymedicareservices();
 
             if (medservices.Count > 0)
             {
@@ -54,7 +55,7 @@ namespace Diagnostic_medicare_center__management
                         medservices.RemoveAt(i);
                     }
                 }
-                medicareservicessql.RemoveMedicareServices(name);
+                Bal.removemedicareservices(name);
                 lblStatus.Text = "Medicare Services Deleted successfully";
                 GetMedicareServices();
             }
@@ -95,27 +96,10 @@ namespace Diagnostic_medicare_center__management
             _sqlconnection.Close();
             MserviceDetails.EditIndex = -1;
             LoadData();
-
-
-            //MedicareServices medicareservices = new MedicareServices();
-            //MedicareServicesSql medicareservicessql = new MedicareServicesSql();
-            //List<MedicareServices> medservices = medicareservicessql.DisplayMedicareServices();
-            //GridViewRow row = MserviceDetails.Rows[e.RowIndex];
-            ////int empId = int.Parse((row.FindControl("lblId") as Label).Text);
-            //string name = (row.FindControl("lblmedicareservice") as TextBox).Text;
-            //string description = (row.FindControl("lblservicedescription") as TextBox).Text;
-            //int amount = int.Parse((row.FindControl("lblamount") as TextBox).Text);
-            //foreach (var x in medservices)
-            //{
-            //    if (x.Medicare_service1 == name)
-            //    {
-            //        x.Amount1 = amount;
-            //        x.Service_Description1 =description;
-
-            //    }
-            //}
             MserviceDetails.EditIndex = -1;
             LoadData();
+           
+
         }
 
         protected void MserviceDetails_RowEditing(object sender, GridViewEditEventArgs e)

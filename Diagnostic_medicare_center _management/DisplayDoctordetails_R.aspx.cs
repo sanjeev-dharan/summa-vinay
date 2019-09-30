@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -13,12 +14,12 @@ namespace Diagnostic_medicare_center__management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetAgent();
+            GetDoctor();
         }
-        public void GetAgent()
+        public void GetDoctor()
         {
-            DoctorDetailsSql doctorDetailsSql = new DoctorDetailsSql();
-            List<DoctorDetails> doctorDetails = doctorDetailsSql.DisplayDoctorDetails();
+            BALAccounts Bal = new BALAccounts();   
+            List<DoctorDetails> doctorDetails =Bal.displaydoctordetails() ;
         gdvDoctorDetails_r.DataSource = doctorDetails;
             gdvDoctorDetails_r.DataBind();
             if (doctorDetails.Count == 0)

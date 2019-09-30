@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -17,8 +18,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetAgent()
         {
-            AgentDetailsSql agentDetailsSql = new AgentDetailsSql();
-            List<AgentDetails> agentDetails = agentDetailsSql.DisplayAgentDetails();
+            BALAccounts Bal = new BALAccounts();
+            List<AgentDetails> agentDetails = Bal.displayagentdetails();
             gdvAgentDetails.DataSource = agentDetails;
             gdvAgentDetails.DataBind();
             if (agentDetails.Count == 0)
@@ -35,14 +36,13 @@ namespace Diagnostic_medicare_center__management
 
         protected void gdvAgentDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            BALAccounts Bal = new BALAccounts();
             GridViewRow row = gdvAgentDetails.Rows[e.RowIndex];
             string name = (row.FindControl("lblAgentfname") as Label).Text;
             AgentDetails agentDetails = new AgentDetails();
             AgentDetailsSql agentDetailsSql = new AgentDetailsSql();
-            List<AgentDetails> agndetails = agentDetailsSql.DisplayAgentDetails();
-
-            if (agndetails.Count > 0)
+            List<AgentDetails> agndetails = Bal.displayagentdetails();
+          if (agndetails.Count > 0)
             {
                 for (int i = 0; i < agndetails.Count; i++)
                 {
@@ -52,7 +52,7 @@ namespace Diagnostic_medicare_center__management
                     }
                 }
 
-                agentDetailsSql.RemoveAgent(name);
+                Bal.removeagent(name);
                 lblStatusAgent.Text = "Agent Details Deleted Successfully";
                 GetAgent();
 

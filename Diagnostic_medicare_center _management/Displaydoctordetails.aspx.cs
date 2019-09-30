@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -17,8 +18,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetDoctor()
         {
-            DoctorDetailsSql doctorDetailsSql = new DoctorDetailsSql();
-            List<DoctorDetails> doctorDetails = doctorDetailsSql.DisplayDoctorDetails();
+            BALAccounts Bal = new BALAccounts();
+            List<DoctorDetails> doctorDetails = Bal.displaydoctordetails();
                 gdvDoctorDetails.DataSource =doctorDetails;
                 gdvDoctorDetails.DataBind();
              if (doctorDetails.Count == 0)
@@ -35,12 +36,11 @@ namespace Diagnostic_medicare_center__management
 
         protected void gdvDoctorDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            BALAccounts Bal = new BALAccounts();
             GridViewRow row = gdvDoctorDetails.Rows[e.RowIndex];
             int id = int.Parse((row.FindControl("lblID") as Label).Text);
             DoctorDetails doctordetails = new DoctorDetails();
-            DoctorDetailsSql doctordetailssql = new DoctorDetailsSql();
-            List<DoctorDetails> docdetails = doctordetailssql.DisplayDoctorDetails();
+            List<DoctorDetails> docdetails = Bal.displaydoctordetails();
 
             if (docdetails.Count > 0)
             {
@@ -52,7 +52,7 @@ namespace Diagnostic_medicare_center__management
                     }
                 }
 
-                doctordetailssql.RemoveDoctor(id);
+                Bal.removedoctor(id);
                 lblStatus.Text = "Doctor Details Deleted Successfully";
                 GetDoctor();
 

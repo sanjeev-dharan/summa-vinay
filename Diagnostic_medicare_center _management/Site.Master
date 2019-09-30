@@ -68,7 +68,12 @@
 
       function successalert() {
           swal.fire({
-              position: 'Center', type: 'error', title: "Login Unsuccessful!", timer: 1500
+              position: 'Center', type: 'error', title: "Login Failed!", timer: 1500
+          })
+      }
+      function regalert() {
+          swal.fire({
+              position: 'Center', type: 'success', title: "Registered Successfully!!", timer: 1500
           })
       }
 

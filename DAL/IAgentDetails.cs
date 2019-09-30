@@ -10,9 +10,8 @@ namespace DAL
 {
     interface IAgentDetails
     {
-        void RegAgentDetails(AgentDetails agentDetails);
+        bool RegAgentDetails(AgentDetails agentDetails);
         List<AgentDetails> DisplayAgentDetails();
-        void ModifyAgentDetails();
         void RemoveAgent(string name);
         DataTable GetPendingApprovalData();
         bool approveUsers(int id, string tableName, string type);

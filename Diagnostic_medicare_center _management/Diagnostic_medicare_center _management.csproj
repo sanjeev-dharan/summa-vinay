@@ -587,6 +587,7 @@
     <Compile Include="Testresultspatient.aspx.designer.cs">
       <DependentUpon>Testresultspatient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="txtdoctorid.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -606,6 +607,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{C89E7A20-7051-4D1A-A87D-17079D22EC28}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{4d2ad8f5-a0ed-49b5-a682-e62ed5d5f187}</Project>
       <Name>DAL</Name>

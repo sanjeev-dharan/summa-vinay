@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -20,8 +21,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetMedicareServices()
         {
-            MedicareServicesSql medicareservicesSql = new MedicareServicesSql();
-            List<MedicareServices> medicareservices = medicareservicesSql.DisplayMedicareServices();
+            BALAccounts Bal = new BALAccounts();
+            List<MedicareServices> medicareservices = Bal.displaymedicareservices();
             MserviceDetails.DataSource = medicareservices;
             MserviceDetails.DataBind();
             if (medicareservices.Count == 0)
@@ -38,11 +39,11 @@ namespace Diagnostic_medicare_center__management
 
         protected void MserviceDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            BALAccounts Bal = new BALAccounts();
             GridViewRow row = MserviceDetails.Rows[e.RowIndex];
             string name = (row.FindControl("lblmedicareservice") as Label).Text;
             MedicareServices medicareservices = new MedicareServices();
-            MedicareServicesSql medicareservicessql = new MedicareServicesSql();
-            List<MedicareServices> medservices = medicareservicessql.DisplayMedicareServices();
+            List<MedicareServices> medservices = Bal.displaymedicareservices();
 
             if (medservices.Count > 0)
             {
@@ -53,7 +54,7 @@ namespace Diagnostic_medicare_center__management
                         medservices.RemoveAt(i);
                     }
                 }
-                medicareservicessql.RemoveMedicareServices(name);
+                Bal.removemedicareservices(name);
                 lblStatus.Text = "Medicare Services Deleted successfully";
                 GetMedicareServices();
             }

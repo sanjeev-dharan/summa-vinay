@@ -10,10 +10,8 @@ namespace DAL
 {
     interface IAdminDetails
     {
-        void RegAdminDetails(AdminDetails adminDetails); 
+        bool RegAdminDetails(AdminDetails adminDetails); 
         List<AdminDetails> DisplayAdminDetails();
-        void ModifyAdminDetails(AdminDetails adminDetails);
-        AdminDetails GetAdmin(int AdminId);
         DataTable GetPendingApprovalData();
         bool approveUsers(int id, string tableName, string type);
     }

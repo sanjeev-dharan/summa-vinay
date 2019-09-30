@@ -29,20 +29,7 @@ namespace Diagnostic_medicare_center__management
                 }
             }
             catch { }
-            //Testresultsql testresultsql = new Testresultsql();
-            //List<TestResultdetails> testresults = testresultsql.DisplayTestResults();
-            //gdvTestresultspatient.DataSource = testresults;
-            //gdvTestresultspatient.DataBind();
-            //if (testresults.Count == 0)
-            //{
-
-            //    lblStatusAgent.Text = " No Test Results To Display";
-
-            //}
-            //else
-            //{
-            //    headStatus.Text = "Test Results";
-            //}
+  
         }
 
     }

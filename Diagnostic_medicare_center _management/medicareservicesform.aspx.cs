@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using Models;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -15,9 +16,6 @@ namespace Diagnostic_medicare_center__management
         {
             if(!IsPostBack)
             {
-                //string name = Request.QueryString["name"];
-                //string description = Request.QueryString["description"];
-                //string amount =Request.QueryString["amount"];
                 txtMS.Text = Request.QueryString["name"];
                 txtMSDescription.Text = Request.QueryString["servicedescription"];
                 txtAmount.Text = Request.QueryString["amount"];
@@ -30,7 +28,7 @@ namespace Diagnostic_medicare_center__management
 
         protected void btnServiceupdate_Click(object sender, EventArgs e)
         {
-            MedicareServicesSql medicareservicessql = new MedicareServicesSql();
+            BALAccounts Bal = new BALAccounts();  
             MedicareServices medicareservices = new MedicareServices
             {
                 MedicareServicesId1 = int.Parse(Request.QueryString["medicareservicesid"].ToString()),
@@ -40,7 +38,7 @@ namespace Diagnostic_medicare_center__management
 
 
             };
-            medicareservicessql.ModifyMedicareServices(medicareservices);
+            Bal.modifymedicareservices(medicareservices);
         }
     }
 }

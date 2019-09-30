@@ -48,6 +48,11 @@ namespace Diagnostic_medicare_center__management
             _sqlCommand.Parameters.AddWithValue("@medicareserviceid", ddlmedicareservices.SelectedItem.Value);
             int result = _sqlCommand.ExecuteNonQuery();
             _sqlConnection.Close();
+            AppointmentStatus.Text = "Appointment booked! Please wait for Approval !! ";
+            txtappointment.Text = "";
+            
+
+
         }
     }
 }

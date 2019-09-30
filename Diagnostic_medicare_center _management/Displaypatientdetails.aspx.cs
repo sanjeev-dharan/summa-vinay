@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BAL;
+using DAL;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,9 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetPatient()
         {
+            BALAccounts balAccounts = new BALAccounts();
             PatientDetailsSql patientDetailsSql = new PatientDetailsSql();
-            List<PatientDetails> patientDetails = patientDetailsSql.DisplayPatientDetails();
+            List<PatientDetails> patientDetails = balAccounts.DisplayPatientDetail();
             gdvPatientDetails.DataSource = patientDetails;
             gdvPatientDetails.DataBind();
             if (patientDetails.Count == 0)
@@ -36,6 +38,7 @@ namespace Diagnostic_medicare_center__management
     
         protected void gdvPatientDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            BALAccounts Bal = new BALAccounts();
             GridViewRow row = gdvPatientDetails.Rows[e.RowIndex];
             string name = (row.FindControl("lblpatientfname") as Label).Text;
             PatientDetails patientDetails = new PatientDetails();
@@ -52,7 +55,7 @@ namespace Diagnostic_medicare_center__management
                     }
                 }
 
-                patientDetailsSql.RemovePatient(name);
+                Bal.removepatient(name);
                 lblStatusPatient.Text = "Patient Details Deleted Successfully";
                 GetPatient();
 

@@ -37,7 +37,7 @@
             </asp:TableRow>         
             </asp:Table>
         
-        <asp:Label runat="server" ID="lblerror"></asp:Label>
+        <asp:Label runat="server" ID="lblerror" Style="color:green"></asp:Label>
                    
 
         

@@ -85,7 +85,7 @@
                     </ItemTemplate>
                 </asp:TemplateField> 
                          
-                <asp:CommandField ButtonType="Link" ShowDeleteButton="true" HeaderText="Action"/>
+                <asp:CommandField ButtonType="Link" ShowDeleteButton="true" HeaderText="Action"  ControlStyle-ForeColor="DarkBlue" ControlStyle-Font-Underline="true"/>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

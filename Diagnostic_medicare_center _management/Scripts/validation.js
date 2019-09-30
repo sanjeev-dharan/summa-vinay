@@ -1084,7 +1084,7 @@ function Appointment_validate()
     var MediServicebook = document.getElementById("ddlmedicareservices").value;
 
     if (appoint == "") {
-        alert("Please update the highlighted mandatory patientID field(s)");
+        alert("Please update the highlighted mandatory date field(s)");
         document.getElementById("txtappoint").style.borderColor = "#FF0000";
         document.getElementById("txtappoint").focus();
 

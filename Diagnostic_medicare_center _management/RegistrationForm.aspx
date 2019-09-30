@@ -56,6 +56,7 @@
             <asp:ListItem Value="2" Text="Patient"></asp:ListItem>
             <asp:ListItem Value="3" Text="Agent"></asp:ListItem>
         </asp:DropDownList><br/>
+               
        
 <center>      
      <asp:Label runat="server" ID="lblMsg"></asp:Label>

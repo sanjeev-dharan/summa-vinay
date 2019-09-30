@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using Models;
+using BAL;
 
 
 namespace Diagnostic_medicare_center__management
@@ -21,8 +22,8 @@ namespace Diagnostic_medicare_center__management
         {
             try
             {
-                AdminDetailsSql adminDetailsSql = new AdminDetailsSql();
-                List<AdminDetails> adminDetail = adminDetailsSql.DisplayAdminDetails();
+                BALAccounts Bal = new BALAccounts();
+                List<AdminDetails> adminDetail = Bal.displayadmindetails();
                 AdminDetails adminDetails = new AdminDetails
                 {
                     FirstName1 = txtAdminFname.Text,
@@ -40,16 +41,11 @@ namespace Diagnostic_medicare_center__management
 
 
                 };
-                string a = txtAdminUserName.Text;
-                for (int i = 0; i < adminDetail.Count; i++)
+                if (Bal.regadmin(adminDetails))
                 {
-                    if (a==adminDetail[i].UserName1.ToString())
-                    {
-                        lblerror.Text = "User Name already exists";
-                    }
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "regalert();", true);
                 }
-
-                adminDetailsSql.RegAdminDetails(adminDetails);
+               
                 
             }
             catch (Exception ex)
@@ -62,7 +58,7 @@ namespace Diagnostic_medicare_center__management
         {
             try
             {
-
+                BALAccounts Bal = new BALAccounts();
 
                 DoctorDetailsSql doctorDetailsSql = new DoctorDetailsSql();
                 DoctorDetails doctorDetails = new DoctorDetails
@@ -89,7 +85,11 @@ namespace Diagnostic_medicare_center__management
                     MedicareServiceID1 = int.Parse(txtDoctorMediServID.Text),
                     Isapproved1 = false
                 };
-                doctorDetailsSql.RegDoctorDetails(doctorDetails);
+                if (Bal.regdoctordetails(doctorDetails))
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "regalert();", true);
+                }
+               
             }
             catch(Exception ex)
             {
@@ -100,7 +100,7 @@ namespace Diagnostic_medicare_center__management
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            PatientDetailsSql patientDetailsSql = new PatientDetailsSql();
+            BALAccounts Bal = new BALAccounts();
             PatientDetails patientDetails = new PatientDetails
             {
                 FirstName1 = txtPatientFname.Text,
@@ -121,13 +121,16 @@ namespace Diagnostic_medicare_center__management
                 Isapproved1 = false
 
             };
-            patientDetailsSql.RegPatientDetails(patientDetails);
+            if(Bal.regpatientdetails(patientDetails))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Popup", "regalert();", true);
+            }            
 
         }
 
         protected void btnAgentsubmit_Click(object sender, EventArgs e)
         {
-            AgentDetailsSql agentDetailsSql = new AgentDetailsSql();
+            BALAccounts Bal = new BALAccounts();
             AgentDetails agentDetails = new AgentDetails
             {
                 FirstName1 = txtAgentFname.Text,
@@ -148,8 +151,10 @@ namespace Diagnostic_medicare_center__management
                 Zipcode1 = int.Parse(txtAgentzip.Text),
                 Isapproved1 = false
             };
-            agentDetailsSql.RegAgentDetails(agentDetails);
-
+            if (Bal.regagent(agentDetails))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Popup", "regalert();", true);
+            }
         }
 
         [System.Web.Services.WebMethod]

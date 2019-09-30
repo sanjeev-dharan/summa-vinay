@@ -75,6 +75,7 @@ namespace Diagnostic_medicare_center__management
                 else
                 {
                     lblMsg.Text = "Incorrect UserId/Password";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
                 }
 
                
@@ -102,6 +103,7 @@ namespace Diagnostic_medicare_center__management
                 else
                 {
                     lblMsg.Text = "Incorrect UserId/Password";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
                 }
 
             }
@@ -127,6 +129,7 @@ namespace Diagnostic_medicare_center__management
                 else
                 {
                     lblMsg.Text = "Incorrect UserId/Password";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
                 }
 
 
@@ -153,6 +156,7 @@ namespace Diagnostic_medicare_center__management
                 else
                 {
                     lblMsg.Text = "Incorrect UserId/Password";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "successalert();", true);
                 }
 
             }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BAL;
 
 namespace Diagnostic_medicare_center__management
 {
@@ -17,8 +18,8 @@ namespace Diagnostic_medicare_center__management
         }
         public void GetTestResults()
         {
-            Testresultsql testresultsql = new Testresultsql();
-            List<TestResultdetails> testresults = testresultsql.DisplayTestResults();
+            BALAccounts Bal = new BALAccounts();
+            List<TestResultdetails> testresults = Bal.displaytestresults();
             gdvTestresults.DataSource = testresults;
             gdvTestresults.DataBind();
             if (testresults.Count == 0)

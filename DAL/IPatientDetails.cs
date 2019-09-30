@@ -10,9 +10,8 @@ namespace DAL
 {
     interface IPatientDetails
     {
-        void RegPatientDetails(PatientDetails patientDetails);
+        bool RegPatientDetails(PatientDetails patientDetails);
         List<PatientDetails> DisplayPatientDetails();
-        void ModifyPatientDetails();
         void RemovePatient(string name);
         DataTable GetPendingApprovalData();
         bool approveUsers(int id, string tableName, string type);
